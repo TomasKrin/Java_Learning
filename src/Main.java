@@ -1,5 +1,3 @@
-package com.tomas.tasks;
-
 import com.tomas.tasks.primitives.Task1;
 import com.tomas.tasks.primitives.Task2;
 import com.tomas.tasks.primitives.Task3;
