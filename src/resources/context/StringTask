@@ -1,0 +1,18 @@
+🔹 🎯 Task: Simple Username Cleaner
+
+You are building a very basic username formatter.
+
+📥 Input:
+String username;
+
+⚙️ Requirements:
+Remove leading and trailing spaces
+Convert the username to lowercase
+Print the cleaned username
+
+📤 Output:
+Cleaned username: john_doe
+
+📌 Example:
+Input: "  John_Doe  "
+Output: Cleaned username: john_doe

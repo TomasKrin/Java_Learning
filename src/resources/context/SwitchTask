@@ -1,0 +1,23 @@
+🔹 🎯 Task: Smart Command System
+
+You are building a simple console command handler (like a mini terminal).
+
+📥 Input:
+String command;
+⚙️ Requirements:
+
+The system should respond to these commands:
+
+"start" → "System starting..."
+"stop" → "System stopping..."
+"restart" → "Restarting system..."
+"status" → "System running normally"
+"help" → "Available commands: start, stop, restart, status"
+
+⚠️ Important:
+
+Use enhanced switch (Java 14+)
+
+📤 Example:
+Input: start
+Output: System starting...

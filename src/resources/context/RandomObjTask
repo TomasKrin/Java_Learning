@@ -1,0 +1,18 @@
+🔹 🎯 Task: Random Number Guess Result
+
+📥 Inputs:
+int userGuess;   // number from 1 to 10
+
+⚙️ Requirements:
+Generate a random number between 1 and 10
+Compare it with userGuess
+
+Print:
+"Exact match! You win" → if equal
+"Close!" → if difference is 1
+"Wrong guess" → otherwise
+
+📤 Example:
+Random number: 7
+Your guess: 6
+Close!

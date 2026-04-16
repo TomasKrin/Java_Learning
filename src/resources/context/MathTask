@@ -1,0 +1,20 @@
+🔹 🎯 Task: Closest Number to Target (use Math class function at least one)
+
+📥 Inputs:
+int a;
+int b;
+int target;
+
+⚙️ Requirements:
+Determine which number (a or b) is closer to target
+Print:
+"A is closer"
+"B is closer"
+"Both are equally close"
+
+📤 Example:
+a = 8
+b = 12
+target = 10
+
+Output: Both are equally close

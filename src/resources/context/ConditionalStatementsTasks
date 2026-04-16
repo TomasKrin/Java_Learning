@@ -1,0 +1,22 @@
+
+
+--
+🎯 Task: Smart Access Control System
+You’re building logic for a building entry system.
+
+📥 Inputs:
+int hour;            // 0–23
+boolean hasCard;
+boolean isEmployee;
+
+⚙️ Behavior:
+If user doesn’t have a card → immediate denial
+If user is an employee:
+Allowed from 06:00 to 22:00
+If user is not an employee:
+Allowed from 09:00 to 18:00
+
+📤 Output examples:
+Access denied: No card
+Access denied: Outside allowed hours
+Access granted
