@@ -1,7 +1,11 @@
 package com.tomas.tasks.conditions;
 
-public class Task1 {
-    public static void main(String[] args) {
+import com.tomas.tasks.TaskProcessor;
+
+public class ConditionsTask1 implements TaskProcessor {
+
+    @Override
+    public void run() {
         int a = 1;
         int b = 2;
 

@@ -1,7 +1,11 @@
 package com.tomas.tasks.primitives;
 
-public class Task4 {
-    public static void main(String[] args) {
+import com.tomas.tasks.TaskProcessor;
+
+public class PrimitivesTask4 implements TaskProcessor {
+
+    @Override
+    public void run() {
         int a;
 
         int b = 1;

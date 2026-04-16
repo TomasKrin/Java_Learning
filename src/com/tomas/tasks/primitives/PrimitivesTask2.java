@@ -1,7 +1,10 @@
 package com.tomas.tasks.primitives;
 
-public class Task2 {
-    public static void main(String[] args) {
+import com.tomas.tasks.TaskProcessor;
+
+public class PrimitivesTask2 implements TaskProcessor {
+    @Override
+    public void run() {
         double c = 13.5;
         double f = (c * 9/5) + 32;
 

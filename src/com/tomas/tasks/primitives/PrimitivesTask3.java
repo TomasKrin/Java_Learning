@@ -1,7 +1,11 @@
 package com.tomas.tasks.primitives;
 
-public class Task3 {
-  public static void main(String[] args) {
+import com.tomas.tasks.TaskProcessor;
+
+public class PrimitivesTask3 implements TaskProcessor {
+
+  @Override
+  public void run() {
     char t = 't';
     int ascii = (int) t;
 
