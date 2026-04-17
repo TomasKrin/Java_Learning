@@ -1,4 +1,4 @@
-🔹 🎯 Task: Simple Username Cleaner
+🔹 🎯 Task 1: Simple Username Cleaner
 
 You are building a very basic username formatter.
 
@@ -16,3 +16,122 @@ Cleaned username: john_doe
 📌 Example:
 Input: "  John_Doe  "
 Output: Cleaned username: john_doe
+
+---
+
+🔹 🎯 Task 2: Palindrome Checker (ignore case and spaces)
+
+📥 Input:
+String text;
+
+⚙️ Requirements:
+Remove all spaces from the text
+Ignore uppercase/lowercase differences
+Check if the cleaned text reads the same forwards and backwards
+Print whether it is a palindrome or not
+
+📤 Output:
+"Palindrome" or "Not a palindrome"
+
+📌 Examples:
+Input: "Race Car"
+Output: Palindrome
+
+Input: "Hello World"
+Output: Not a palindrome
+
+---
+
+🔹 🎯 Task 3: Mask Email Address
+
+You are building a privacy tool that partially hides an email address.
+
+📥 Input:
+String email;
+
+⚙️ Requirements:
+Split the email into the part before @ and the part after @
+Keep the first and last character of the name part, replace everything in between with ***
+Combine it back with the domain part
+If the name part has 2 or fewer characters, don't mask it
+
+📤 Output:
+Masked email: j***e@gmail.com
+
+📌 Examples:
+Input: "johndoe@gmail.com"
+Output: Masked email: j***e@gmail.com
+
+Input: "ab@mail.com"
+Output: Masked email: ab@mail.com
+
+---
+
+🔹 🎯 Task 4: Count Vowels and Consonants
+
+📥 Input:
+String sentence;
+
+⚙️ Requirements:
+Count all vowels (a, e, i, o, u) in the string (ignore case)
+Count all consonants (letters that are not vowels) in the string
+Ignore digits, spaces, and special characters — only count letters
+Print both counts
+
+📤 Output:
+Vowels: X
+Consonants: Y
+
+📌 Example:
+Input: "Hello World 123!"
+Output:
+Vowels: 3
+Consonants: 7
+
+---
+
+🔹 🎯 Task 5: Reverse Words but Keep Order
+
+📥 Input:
+String sentence;
+
+⚙️ Requirements:
+Split the sentence into words
+Reverse each word individually (not the order of words)
+Join them back together with a single space
+Handle extra spaces between words — output should have only single spaces
+
+📤 Output:
+Reversed words: <result>
+
+📌 Examples:
+Input: "Hello World"
+Output: Reversed words: olleH dlroW
+
+Input: "Java  is   fun"
+Output: Reversed words: avaJ si nuf
+
+---
+
+🔹 🎯 Task 6: Compress a String (Run-Length Encoding)
+
+📥 Input:
+String text;
+
+⚙️ Requirements:
+Replace consecutive repeated characters with the character followed by the count
+If a character appears only once, just keep the character (no count)
+The input will only contain lowercase letters
+
+📤 Output:
+Compressed: <result>
+
+📌 Examples:
+Input: "aaabbbcc"
+Output: Compressed: a3b3c2
+
+Input: "abcd"
+Output: Compressed: abcd
+
+Input: "aabcccdddd"
+Output: Compressed: a2bc3d4
