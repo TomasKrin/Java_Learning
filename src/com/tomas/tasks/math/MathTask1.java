@@ -7,7 +7,6 @@ public class MathTask1 implements TaskProcessor {
   @Override
   public void run() {
     Scanner scanner = new Scanner(System.in);
-
     int a;
     int b;
     int target;
@@ -32,8 +31,8 @@ public class MathTask1 implements TaskProcessor {
 
     } catch (Exception e) {
       System.out.println("Invalid input");
+    } finally {
+      scanner.close();
     }
-
-    scanner.close();
   }
 }
