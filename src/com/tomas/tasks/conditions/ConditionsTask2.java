@@ -24,7 +24,7 @@ public class ConditionsTask2 implements TaskProcessor {
         hour = scanner.nextInt();
 
         if (isEmployee) {
-          if (hour >= 6 && hour < 12) {
+          if (hour >= 6 && hour < 22) {
             System.out.println("Access granted");
           } else {
             System.out.println("Access denied: Outside allowed hours");
