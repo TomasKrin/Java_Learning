@@ -1,0 +1,52 @@
+JavaDoc in java:
+
+JavaDoc - a document generator tool for generating standard documentation in HTML format. It generates API documentation.
+
+It's a prebuilt tool in java, that lets you document the code (for better understanding, what everything does) easier.
+
+In java there is a few ways to comment the code.
+
+Most common ones are:
+
+// Single-line comment
+
+/*
+   Multi-Line comment.
+*/
+
+/**
+   JavaDoc comment.
+*/
+
+
+So to use JavaDoc we should use the JavaDoc comment.
+
+------------------------------------------
+
+JavaDoc has special tags, that are used within JavaDoc comments to provide specific information about the code elements being documented. These tags help in enhancing the clarity and completeness of the generated documentation.
+
+Most commonly used tags are:
+
+/**
+ * @author - who wrote the code
+ * @version - version of the code
+ * @param - describes a method parameter
+ * @return - describes what the method returns
+ * @throws/@exception - describes what exception the method may throw
+ */
+
+------------------------------------------
+
+Example of JavaDoc:
+
+/**
+ * Calculates the sum of two numbers.
+ *
+ * @param a first number
+ * @param b second number
+ * @return the sum of a and b
+ */
+public int sum(int a, int b) {
+    return a + b;
+}
+

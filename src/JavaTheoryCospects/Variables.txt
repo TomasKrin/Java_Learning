@@ -1,0 +1,126 @@
+Variables in java:
+
+Java is strongly typed language.
+
+We use variables like this:
+
+type name = value;
+
+Variable is a named storage location in memory that holds value.
+
+---------------------------------
+
+Data (variable) types:
+
+In Java there are 2 categories of data types:
+
+---------------------------------
+
+1. Primitive:
+
+	Primitive - simple to work with, basic.
+	Primitive category have 4 subcategories in general which can be divided:
+	
+	---------------------------------
+
+	1. Integer - a whole (positive or negative) number without factual or 
+	decimal parts, category can be split into 4 types, which have different sizes 	in memory:
+		
+		---------------------------------
+
+		* byte - Very small integers.
+
+		Usage: Often used for raw byte data in I(input)/O(output) or 			encodings, not very much elsewhere.
+		
+		Size: 1 byte (8 bits).
+		Range of values: -128 to 127.
+
+		---------------------------------
+
+		* short - Small integer values.
+
+		Usage: Not common to use in practice.
+
+		Size: 2 bytes (16 bits). 
+		Range of values: -32,768 to 32,767.
+
+		---------------------------------
+
+		* int - Standard integer type.
+
+		Usage: Most commonly used for whole numbers.
+
+		Size: 4 bytes (32 bits).
+		Range of values: -2,147,483,648 to 2,147,483,647;
+
+		---------------------------------
+
+		* long - Large integer values.
+
+		Usage: used when int is not enough.
+
+		Have to be initialized with letter L (or l, but L is recommended, 		better for readability) after the value, to be able to use long type 		(to specify it is long number).
+
+		Size: 8 bytes (64 bits).
+		Range of values: -9,223,372,036,854,775,808 to 							  9,223,372,036,854,775,807
+
+	---------------------------------
+
+	2. Float - floating point value, category can be split into 2 types:
+		
+		---------------------------------		
+
+		* float - floating point type with less precision (has less range 		after .), smaller memory footprint.
+		
+		Usage: when we want to conserve memory if we are not working with huge 		decimals after floating point and when we don't need scientific 		precision.
+
+		Have to be initialized with letter f or F after the value, to be able 		to use float type (to specify it is float).
+
+		Size: 4 bytes (32 bits).
+
+		Precision (Range of values after floating point): Approx. 6 to 7 		digits.
+		
+		---------------------------------
+
+		* double - floating point type with higher precision.
+		
+		DEFAULT FOR DECIMALS.
+		
+		Usage: Default way of working with decimals when we need higher 		precision.
+
+		Size: 8 bytes (64 bits).
+		Precision (Range of values after floating point): Approx. 15 to 16 		digits.
+
+	---------------------------------
+	
+	3. Character - char - stores a single character (letter, digit or symbol).
+	
+	char values are defined inside SINGLE QUOTES ('').
+
+	Usage: when we work with single characters (letter, digit or symbol).
+	
+	Size: 2 bytes (16 bits).
+
+	Range of values: Unicode characters (0 to 65,535).
+
+	---------------------------------
+	
+	4. Boolean - boolean - logical values.
+	
+	Usage: in conditions, when we want to check whether the condition is true or 	false.
+	
+	Size: Not specified (JVM-dependent for tech/performance reasons).
+
+	Range of values: true or false (NOT 0 AND 1 LIKE IN OTHER LANGUAGES).
+
+	---------------------------------
+
+The ranges of values in types are like this to preserve memory and optimize the performance. 
+
+If we add (+) 1 to the max value in range, then it is called OVERFLOW and it jumps from the maximum value to a minimum value. It can work opposite way and is called UNDERFLOW when we subtract (-) 1 from the min value it jumps to maximum value.
+
+If we would add or subtract more than 1 it would start going up or down in the given range of the type depending on value (range is like a clock or odometer).
+
+---------------------------------
+
+2. Reference:

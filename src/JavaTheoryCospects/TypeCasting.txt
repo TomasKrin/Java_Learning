@@ -1,0 +1,91 @@
+Typecasting = converting one data type to another, when we assign a value of one data type to a variable of another type
+
+______________________________________________________
+
+In java there is two kind of types:
+
+1. Primitive = a primitive variable contains its value, conversion of primitive variable means irreversible changes in its value.
+
+2. Reference = reference variables only refers to an object, but doesn't contain the object itself. Casting a reference variable doesn't touch the object it refers to, but only labels it in another way, extending or narrowing opportunities to work with it.
+
+
+______________________________________________________
+
+PRIMITIVE TYPES:
+______________________________________________________
+
+In java there is 2 casting types for primitive variables:
+
+1. Widening casting = done automatically by java, when we convert a smaller type to a larger type automatically, we don't loose any information, that's why it's automatic. (f.e.: we convert int to double, happens automatically:
+
+int myInt = 9 --> 9
+double myDouble = myInt --> 9.0
+
+).
+
+2. Narrowing casting = done manually, also known as shrinking data, the process of reducing a larger data type to a smaller one. If we don't do this explicitly we will get a compile-time error. (F.e.: we convert double to int:
+
+double myDouble = 9.78; --> 9.78
+int myInt = (int) myDouble; --> 9
+
+).
+
+______________________________________________________
+
+Boxing/unboxing conversion:
+
+In Java we have Wrapper classes for each primitive type, which provides us with useful processing methods, without heavy object references. This is also known as conversion to/from primitive to an object and back. (F.E.:
+
+Integer myIntegerReference = myInt;
+int myOtherInt = myIntegerReference;
+)
+
+______________________________________________________
+
+
+String Conversions:
+
+All primitive types may be converted to String through their Wrapper Classes using .toString() method. (F.E.:
+
+String myString = myIntegerReference.toString();
+
+).
+
+We can also go back to primitive types using parse method defined by Wrapper Class.
+(F.E.:
+
+byte  myNewByte   = Byte.parseByte(myString);
+short myNewShort  = Short.parseShort(myString);
+int   myNewInt    = Integer.parseInt(myString);
+long  myNewLong   = Long.parseLong(myString);
+
+float  myNewFloat  = Float.parseFloat(myString);
+double myNewDouble = Double.parseDouble(myString);
+boolean myNewBoolean = Boolean.parseBoolean(myString);
+)
+
+EXCEPTION TO PRIMITIVE TYPE CONVERSION FROM STRING WOULD BE CHAR:
+
+Because string is made with chars so to convert back to char we would need to use .charAt(0) method.
+
+(F.E.:
+
+char myNewChar = myString.charAt(0);
+)
+
+______________________________________________________
+
+Numeric promotions:
+
+To execute a binary operation, it is necessary that both values (operands) are compatible in terms of size.
+
+There is a set of rules that applies in this case:
+1. If one of the values is a double, the other is promoted to double.
+2. Otherwise, if one of the values is float, the other is promoted to float.
+3. Otherwise, if one of the values is long, the other is promoted to long.
+4. Otherwise, both are considered int.
+
+Double is the strongest type in these cases and if one of the values in operation (like math) is double other numeric types will be converted to double.
+
+So in other words the order is: double -> float -> long -> int.
+

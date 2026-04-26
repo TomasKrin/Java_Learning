@@ -1,0 +1,51 @@
+.equals() vs == in java:
+
+String a = new String("hello");
+String b = new String("hello");
+a == b      // false (different references)
+a.equals(b) // true (same value)
+
+------------------------------
+
+== - is checking the memory location of the variables (reference) we are comparing.
+
+== is used when we compare primitive types (int, double, float, short, long, byte, char and boolean).
+
+For object types the equality operator (==) performs a referential equality comparison only, ignoring the values. It checks that two variables are referencing the same memory address.
+
+Java doesn't allow assigning or comparing null  with primitive values.
+
+Object references can store null and by using the equality operator (==) and comparing null, we can check if the object assigned to the variable is already initialized.
+
+------------------------------
+
+.equals() - value equality. When two separate objects contain the same value or state.
+
+It is impossible to use .equals() directly using primitive variables, will cause compilation error. If we need it to work with .equals(), we need to use the wrapper classes for those variables.
+
+If we compare the objects directly we need to override the .equals() with a custom check to consider object values and not objects themselves, because different objects have different references to them, in memory.
+
+Exception to this, when we do the .equals() on String, than we can see the clear value comparison, since the default .equals() method is already overridden for String class, and is different from default Object Class .equals().
+
+We usually override the .equals() method in our class, when we want it to have a special condition check, because equals doesn't always mean the same thing in different contexts. We can always compare specific field values directly (e.g. obj.name.equals(obj2.name)) without overriding .equals() on the whole object, if we don't need full object equality.
+
+If equals() is being overridden, then we should also override the hashCode() method. Both methods belong to the same contract in Object. If the objects are equal according to equals(), they must return the same hash code.
+
+When the hash codes don't match, hash-based collections such as HashMap or HashSet may behave in unexpected ways.
+
+Calling .equals() on a null reference throws a NullPointerException, so equality checks should occur on a non-null reference.
+
+We should always first check that the value on which we are calling the .equals() method is not null, or it could lead to bugs.
+
+Examples:
+
+
+#1 - leads to error.
+Person a = new Person("Bob", 20);
+Person e = null;
+assertFalse(a.equals(e));
+assertThrows(NullPointerException.class, () -> e.equals(a));
+
+#2 - is correct.
+assertFalse(e != null && e.equals(a));
+

@@ -1,0 +1,66 @@
+String in java:
+
+In java String by itself is a type reference to a class.
+
+Ways to initialize a string:
+
+1. String name = new String("Tomas");
+2. String name = "Tomas";
+
+Both ways work, because 1 is done under the hood automatically when we initialize 2, 2 is a shorthand of 1.
+
+String IS IMMUTABLE - it is saved in heap memory of Jvm inside a String Constant Pool.
+
+Every time we create a new variable String it checks inside the String Constant Pool for exact matches (the variable of string is an address to the location of the string in heap memory). If we do have matches in heap memory than it will not create a new object, but will reference to the same address that already exists.
+
+String s1 = "string";
+String s2 = "string";
+
+s1 == s2 --> address is the same, because both refer to the same string inside the memory it is not recreated.
+
+When we reassign the value of String variable it creates a new instance (new object) in the Heap Memory, inside String Constant Pool and than changes the reference address to the new one, but not the actual data:
+
+String name = "Tomas";
+name = name + " Krinickas";
+
+String only works with + operator (doesn't work with other math (-,*,/,etc.) operators).
+
+The old string value after the changes above is now eligible for garbage collection and will be removed after some time, to save some memory.
+
+Use case: when string doesn't need to be modified.
+
+There also exists mutable string variations, but under different classes like StringBuffer or StringBuilder.
+
+-------------------------------------------
+StringBuffer in java:
+
+StringBuffer allows us to create MUTABLE strings, editable and updatable sequence of character, without creating new object.
+
+Can be converted to String using .toString() method.
+
+StringBuffer default capacity is 16 characters, which is the amount of storage available for character inserts, without memory re-allocation.
+
+Capacity vs Length:
+	capacity = how much space is reserved
+	length   = how much is actually used
+	default capacity = string length + 16 characters
+
+Resizing:
+	triggers when content won't fit
+	formula: new capacity = (current capacity × 2) + 2
+	exception: jumps to exact size if formula still too small
+	process: old array is copied into a new bigger array, old one is discarded
+
+StringBuffer methods are synchronized - meaning if multiple threads try to modify the same StringBuffer instance at the same time, only one thread can execute at a time, while others wait, because of this StringBuffer is multithread-safe.
+
+StringBuffer is designed to be used, when working with often changing strings in MULTITHREADED ENVIRONMENTS.
+
+-------------------------------------------
+StringBuilder in java:
+
+StringBuilder is the same as StringBuffer, but designed for SINGLE-THREADED ENVIRONMENTS.
+
+StringBuilder is faster than StringBuffer, because its methods are not synchronized (no waiting between threads = less overhead).
+
+StringBuilder is designed to be used, when working with often changing strings in a single-threaded environment.
+

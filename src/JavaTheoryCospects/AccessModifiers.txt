@@ -1,0 +1,33 @@
+Access modifiers in java:
+
+Access modifiers are used for setting the access level to classes, variables, methods and constructors.
+
+There is 4 types of access modifiers in Java:
+
+_____________________________________________
+
+1. private:
+	When we add private keyword to method, property, or constructor, we make it 	ACCESSIBLE IN THE SAME CLASS ONLY (i.e.: only usable inside the same class 	it was declared).
+
+	private is the most restrictive access modifier and is core concept of 		encapsulation.
+_____________________________________________
+
+2. default: 
+	When we don't use any keyword explicitly Java will set a default access to 	given class, method or property.
+
+	default access modifier is also called package-private, meaning - ACCESSIBLE 	WITHIN THE SAME PACKAGE ONLY, NOT ACCESSIBLE TO OTHER PACKAGES.
+_____________________________________________
+
+3. protected:
+	When we add protected keyword to method, property or constructor it works 	similarly to a default access modifier, but with added functionality.
+
+	ACCESSIBLE WITHIN THE SAME PACKAGE OR ALL SUBCLASSES OF ITS CLASS, EVEN IF 	THEY ARE IN OTHER PACKAGES.
+_____________________________________________
+	
+4. public:
+	When we add public keyword to class, method or property, then we are MAKING IT 	ACCESSIBLE EVERYWHERE (i.e.: all other classes in all packages will be able to 	use it).
+
+	public is the least restrictive access modifier.
+_____________________________________________
+
+Top-level class can only use public or default access modifiers, because they are not members of another class.

@@ -1,0 +1,87 @@
+Ternary operators in java:
+
+---------------------------------------------
+
+booleanExpression ? expression1 : expression2;
+
+(condition) ? ifTrue : ifElse;
+
+---------------------------------------------
+
+Conditional operator --> ?: - it's considered form of if-else statement that also returns a value.
+
+It is the only operator that accepts 3 operands.
+
+The first operand must be a boolean expression (returns true/false).
+
+The second and third operands can be any expressions that are type-compatible with each other and with the variable where the result is used.
+
+Ternary construct (operation) returns expression 1 if boolean expression (before ?) is true. 
+
+Ternary construct (operation) returns expression 2 if boolean expression (before ?) is false. 
+
+IMPORTANT!!! --> expression 1 and expression 2 must be expressions that return a value, not a void statement.
+
+When using Java ternary construct, only one of the right-hand side expressions (either expression 1 or expression 2) is evaluated at runtime, the other one is skipped.
+
+---------------------------------------------
+
+Examples:
+
+int num = 8;
+String msg = num > 10 
+  ? "Number is greater than 10" 
+  : "Number is less than or equal to 10";
+
+
+final int num = 8;
+final String msg = num > 10 
+  ? "Number is greater than 10" 
+  : "Number is less than or equal to 10";
+
+
+String checkNumber(int num) {
+    return num > 10 
+      ? "Number is greater than 10" 
+      : "Number is less than or equal to 10";
+}
+
+---------------------------------------------
+
+Incorrect usage:
+
+Ternary operator cannot be used for statements that don't return value (not a void statement).
+
+F.E.:
+
+int num = 8;
+if (num > 10) {
+    LOGGER.info("Number is greater than 10");
+} else {
+    LOGGER.info("Number is less than or equal to 10");
+}
+
+
+int num = 8;
+num > 10 
+  ? LOGGER.info("Number is greater than 10") 
+  : LOGGER.info("Number is less than or equal to 10");
+
+---------------------------------------------
+
+Nesting ternary operator:
+
+We can nest ternary operator to any number of levels.
+
+To improve the readability we can use parentheses ().
+
+It is NOT RECOMMENDED to nest the ternary operators because of readability and maintainability difficulties.
+
+Examples:
+
+String msg = num > 10 ? "Number is greater than 10" : 
+  num > 5 ? "Number is greater than 5" : "Number is less than equal to 5";
+
+String msg = num > 10 ? "Number is greater than 10" 
+  : (num > 5 ? "Number is greater than 5" : "Number is less than equal to 5");
+

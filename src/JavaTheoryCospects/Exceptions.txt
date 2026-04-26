@@ -1,0 +1,54 @@
+Exceptions in java:
+
+In java there is different type of errors:
+
+1. Compile time errors - easiest to find, because most of the time compiler will show us the exact error and place where it happened.
+
+2. Runtime errors - mid level difficulty error to spot, happens when some line of code is triggered you get an error and it stops the application from running. Here where Exceptions and their handling helps us.
+
+3. Logical errors - hardest error to catch, because it happens when we do some operation and the result is different from what we expect or what has to return (f.e.: some sort of difficult scientific calculation error that returns wrong value). Logical errors best solved by running tests.
+
+---------------------------------------------
+
+Exceptions help us handle the Runtime errors.
+
+To handle the runtime errors we can put possibly problematic block of code into try-catch block. If a code fails inside the try block, then it will fall to catch, where we can execute some kind of handling procedure without stopping the program from running. Try can have multiple catch blocks, to handle different type of Exceptions (we specify it as an error type).
+
+Try-catch block has one more block, that is less commonly used called finally, finally executes always, regardless if exception happened or not. We typically use finally for cleanup, like closing a file or connection.
+
+Example of Try-catch-finally block:
+
+try {
+} catch (Exception e) {
+} finally {
+}
+
+---------------------------------------------
+
+Exception is a parent class of all other exception classes like ArithmeticException, ArrayIndexOutOfBoundsException, etc.
+
+If we want to write a custom exception class we should extend the Exception class so it would be able to be used in catch block.
+
+
+Exceptions have quite a few different types, but in particular you can place them in two groups:
+
+1. Unchecked Exceptions - RuntimeExceptions and its subclasses. Basically java tells us it's our choice if we want to handle these or not.
+
+2. Checked Exceptions - every Exception other than RuntimeException. Basically java will tell us to handle these exceptions, at the time of compiling.
+
+---------------------------------------------
+
+There are a few keywords that help us manually trigger, or that our method will fall under some Exception:
+
+1. throw - manually triggers an Exception inside a method.
+
+	throw new IllegalArgumentException("Invalid value");
+
+	---------------------------------------------
+
+2. throws - declares in the method signature, that it might throw an Exception, used for checked Exceptions.
+
+	public void readFile() throws IOException {
+	}
+
+	---------------------------------------------

@@ -1,0 +1,34 @@
+Objects in java:
+
+Java is Object Oriented programming language.
+
+All Objects have properties and behaviors.
+
+In java we need Classes to be able to use Objects.
+
+Classes are blueprints or templates for Objects. We use them to describe types of entities. Classes represent a definition or a type of Object.
+
+Objects are living entities (instances created in heap memory) created from Classes. They contain state within their field and present certain behaviors with their methods.
+
+When we create an Object it is stored inside heap memory, and variables hold a reference to it, not the object itself.
+
+Classes are translated during compile time and Objects are created from classes at runtime.
+
+Example:
+
+3 different Objects being initialized from Class Car.
+
+Car focus = new Car("Ford", "Focus", "red");
+Car auris = new Car("Toyota", "Auris", "blue");
+Car golf = new Car("Volkswagen", "Golf", "green");
+
+The main point of the Classes and Objects is to define a blueprint (Class) in one place, and then, to reuse it many times in many places (Object).
+
+-----------------------------------------
+
+Object Class in java:
+
+Every class in java extends Object class. Object class is at the top of inheritance hierarchy, meaning it is the root/parent class of every class in java, therefore all objects, including arrays, inherit implementations of the methods of the Object Class.
+
+Most notably, the methods like .toString, .equals, .hashCode, and some more are all coming from the Object Class, that's why we don't have to define them in our Class we are creating, for them to be recognized and to work.
+
