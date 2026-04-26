@@ -1,23 +1,28 @@
 1. Type casting  (Primitive types +)  /
-
 2. Ternary java +
-
 3. String in java* (prio)  +
-
 4. String vs StringBuilder vs StringBuffer +
-
 5. Access modifiers in java +
-
 6. Java variables, their types, memory costs, mostly used, min and max values in memory,
 why min and max values are as they are, what happens when we extend max value by 1. (Primitive variables +)  /
-
 7. Objects, what are objects, object class +
-
 8. == and equals() difference +
-
 9. Exceptions in java +
-
 10. what is java doc, and how to use it. +
+
+----
+
+04-26
+
+1. Operators in java, get familiar with what operators can be used in java programs. No need to memorize, just keep in mind what can be used.
+2. Variable scopes.
+3. What is instanceof and how it can be used in java programs?
+4. How break and continue work in loops. What happens if we use break in an inner loop? How can we break out of nested loops (labeled break)?
+5. Java reserved keywords. No need to memorize, just keep in mind what can be used.
+6. What is null? How NullPointerException can be triggered and how it is handled?
+7. Wrapper classes — what are they, how are they used, and why do we need them?
+
+
 
 / - partially checked
 + - fully checked
