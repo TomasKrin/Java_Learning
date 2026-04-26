@@ -1,0 +1,145 @@
+🔹 🎯 Task 1: Shift Array Left
+You are writing a utility that rotates all elements of an array one position to the left (the first element wraps to the end).
+📥 Input:
+int[] arr;
+⚙️ Requirements:
+•
+Write a method shiftLeft(int[] arr) that modifies the array in place
+•
+The first element moves to the last position; every other element shifts one index to the left
+•
+Print the resulting array on one line, space-separated
+⚠️ Watch out:
+•
+In JS, arrays are objects — but Java arrays are also reference types, so shiftLeft receives the reference and mutations inside the method affect the original. However, reassigning the parameter (arr = new int[]{...}) inside the method does not affect the caller's variable. Mutate the contents, not the reference.
+•
+Save arr[0] before the loop or you'll overwrite it.
+📤 Output format:
+Shifted: X X X X
+📌 Test cases:
+Input: arr = {1, 2, 3, 4, 5}
+Output: Shifted: 2 3 4 5 1
+
+Input: arr = {42}
+Output: Shifted: 42
+
+Input: arr = {7, 3}
+Output: Shifted: 3 7
+
+Input: arr = {-1, 0, 1}
+Output: Shifted: 0 1 -1
+
+--
+
+🔹 🎯 Task 2: Column Sum of a 2D Array
+You are building a report tool that sums each column of a rectangular 2D grid and prints the totals.
+📥 Input:
+int[][] grid;   // rectangular — all rows same length
+⚙️ Requirements:
+•
+Write a method columnSums(int[][] grid) that returns a new int[] where each element is the sum of the corresponding column
+•
+Print each column sum on its own line as "Col X: Y"
+⚠️ Watch out:
+•
+In JS you'd use arr[0].length instinctively. In Java, grid.length is the number of rows; grid[0].length is the number of columns — easy to swap and get an ArrayIndexOutOfBoundsException instead of a compile error.
+•
+Java 2D arrays are arrays-of-arrays, not a true matrix. Each row is an independent int[].
+📤 Output format:
+Col 0: X
+Col 1: X
+...
+📌 Test cases:
+Input:
+grid = {
+  {1, 2, 3},
+  {4, 5, 6},
+  {7, 8, 9}
+}
+Output:
+Col 0: 12
+Col 1: 15
+Col 2: 18
+
+Input:
+grid = {
+  {10, -10},
+  {5,    5}
+}
+Output:
+Col 0: 15
+Col 1: -5
+
+Input:
+grid = {
+  {0, 0, 0}
+}
+Output:
+Col 0: 0
+Col 1: 0
+Col 2: 0
+
+Input:
+grid = {
+  {-3, 4},
+  {-1, 2},
+  { 2,-6}
+}
+Output:
+Col 0: -2
+Col 1: 0
+
+---
+
+🔹 🎯 Task: Stats Reporter
+You are writing a lightweight statistics utility that accepts a variable number of integer scores.
+📥 Input:
+int... scores;
+⚙️ Requirements:
+•
+Write a method report(int... scores) that calculates and prints the count, sum, min, max, and average of the provided scores
+•
+Average must be printed with 2 decimal places
+•
+If no arguments are passed, print "No scores provided"
+⚠️ Watch out:
+•
+In JS you'd use rest params (...scores) and scores is a plain array — same syntax, same feel. In Java, int... scores is also just an int[] inside the method, but the trap is trying to call array methods like .length() (it's a field: .length, no parentheses) or assuming it's an Integer[] and calling .equals() — it's a primitive array.
+•
+Integer division strikes again: sum / scores.length drops the decimal. Cast one operand to double before dividing.
+📤 Output format:
+Count: X
+Sum:   X
+Min:   X
+Max:   X
+Avg:   X.XX
+or
+No scores provided
+📌 Test cases:
+Input: report(4, 7, 2, 9, 1)
+Output:
+Count: 5
+Sum:   23
+Min:   1
+Max:   9
+Avg:   4.60
+
+Input: report(42)
+Output:
+Count: 1
+Sum:   42
+Min:   42
+Max:   42
+Avg:   42.00
+
+Input: report(-5, -5, -5)
+Output:
+Count: 3
+Sum:   -15
+Min:   -5
+Max:   -5
+Avg:   -5.00
+
+Input: report()
+Output:
+No scores provided

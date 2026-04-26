@@ -1,0 +1,175 @@
+🔹 🎯 Task 1: Describe a Number
+You are writing a utility that prints a human-readable description of a number — but the method must be callable with either an int or a double.
+
+📥 Input:
+// call both overloads in main method
+int    intVal;
+double doubleVal;
+
+⚙️ Requirements:
+• Write an overloaded method describe that accepts an int and prints "Integer: X"
+• Write another describe that accepts a double and prints "Decimal: X.XX" (always 2 decimal places)
+• Call both from main
+
+⚠️ Watch out:
+• In JS you'd write one function and check typeof. In Java the compiler picks the overload at compile time based on the declared type — passing 3 to a method that has both describe(int) and describe(double) will always resolve to describe(int). There is no runtime dispatch here.
+
+📤 Output format:
+Integer: X
+Decimal: X.XX
+
+📌 Test cases:
+Input: intVal=7, doubleVal=3.5
+Output:
+Integer: 7
+Decimal: 3.50
+
+Input: intVal=-1, doubleVal=0.1
+Output:
+Integer: -1
+Decimal: 0.10
+
+Input: intVal=100, doubleVal=99.999
+Output:
+Integer: 100
+Decimal: 100.00
+
+Input: intVal=0, doubleVal=0.0
+Output:
+Integer: 0
+Decimal: 0.00
+
+--
+
+🔹 🎯 Task 2: Repeat a String
+You are writing a text-formatting helper with two flavours: repeat a string N times, or repeat it with a separator.
+📥 Input:
+String word;
+int    times;
+String separator;
+⚙️ Requirements:
+•
+Write repeat(String word, int times) → returns the word concatenated times times (no separator)
+•
+Write repeat(String word, int times, String separator) → returns the word joined times times using separator
+•
+Both methods must return a String, not print it
+•
+main prints the results of both calls
+⚠️ Watch out:
+•
+Strings are immutable — building with + inside a loop creates a new object every iteration. For this task it's acceptable, but be aware the result of + is always a brand-new String.
+•
+Return type alone cannot distinguish overloads; only parameter list matters.
+📤 Output format:
+No separator: XXXX
+With separator: X-X-X
+📌 Test cases:
+Input: word="ha", times=3, separator="-"
+Output:
+No separator: hahaha
+With separator: ha-ha-ha
+
+Input: word="go", times=1, separator=", "
+Output:
+No separator: go
+With separator: go
+
+Input: word="ab", times=4, separator="."
+Output:
+No separator: abababab
+With separator: ab.ab.ab.ab
+
+Input: word="!", times=2, separator=" "
+Output:
+No separator: !!
+With separator: ! !
+
+---
+
+ 🎯 Task 3: Power Calculator
+You are writing a math helper where the exponent can be omitted (defaults to 2 — squaring).
+📥 Input:
+double base;
+int    exponent;   // used in the two-argument call
+⚙️ Requirements:
+•
+Write power(double base) → returns base raised to the power of 2
+•
+Write power(double base, int exponent) → returns base raised to the power of exponent
+•
+Both methods must return a double
+•
+main prints both results with no decimal places (cast to long for printing)
+⚠️ Watch out:
+•
+Math.pow returns a double. Casting (long) Math.pow(...) truncates, not rounds — (long) 7.9999999 = 7. Verify your test cases with exact integers to avoid float precision surprises.
+•
+In JS you'd use default parameters (exponent = 2). Java has no default parameters — overloading is the idiomatic substitute.
+📤 Output format:
+Squared: X
+Power: X
+📌 Test cases:
+Input: base=3.0, exponent=3
+Output:
+Squared: 9
+Power: 27
+
+Input: base=2.0, exponent=10
+Output:
+Squared: 4
+Power: 1024
+
+Input: base=5.0, exponent=0
+Output:
+Squared: 25
+Power: 1
+
+Input: base=1.0, exponent=100
+Output:
+Squared: 1
+Power: 1
+
+--
+
+🔹 🎯 BONUS task: Min of Two or Three
+You are implementing a min utility — the caller can compare two or three integers. The three-argument version must reuse the two-argument version internally.
+📥 Input:
+int a;
+int b;
+int c;
+⚙️ Requirements:
+•
+Write min(int a, int b) → returns the smaller of the two
+•
+Write min(int a, int b, int c) → returns the smallest of the three by calling min(int, int) twice — no Math.min allowed
+•
+main prints results of both calls
+⚠️ Watch out:
+•
+Java resolves the overload at compile time based on argument count. min(a, b, c) and min(a, b) are entirely different method signatures — there is no arguments object or rest-params magic like in JS.
+•
+A common mistake: writing min(int a, int b, int c) without delegating, then having two separate implementations that can go out of sync.
+📤 Output format:
+Min of two:   X
+Min of three: X
+📌 Test cases:
+Input: a=4, b=7, c=1
+Output:
+Min of two:   4
+Min of three: 1
+
+Input: a=-3, b=-3, c=-3
+Output:
+Min of two:   -3
+Min of three: -3
+
+Input: a=0, b=-1, c=100
+Output:
+Min of two:   -1
+Min of three: -1
+
+Input: a=Integer.MAX_VALUE, b=Integer.MAX_VALUE - 1, c=Integer.MAX_VALUE - 2
+Output:
+Min of two:   2147483646
+Min of three: 2147483645

@@ -1,0 +1,52 @@
+🔹 🎯 Task: Stats Reporter
+You are writing a lightweight statistics utility that accepts a variable number of integer scores.
+📥 Input:
+int... scores;
+⚙️ Requirements:
+•
+Write a method report(int... scores) that calculates and prints the count, sum, min, max, and average of the provided scores
+•
+Average must be printed with 2 decimal places
+•
+If no arguments are passed, print "No scores provided"
+⚠️ Watch out:
+•
+In JS you'd use rest params (...scores) and scores is a plain array — same syntax, same feel. In Java, int... scores is also just an int[] inside the method, but the trap is trying to call array methods like .length() (it's a field: .length, no parentheses) or assuming it's an Integer[] and calling .equals() — it's a primitive array.
+•
+Integer division strikes again: sum / scores.length drops the decimal. Cast one operand to double before dividing.
+📤 Output format:
+Count: X
+Sum:   X
+Min:   X
+Max:   X
+Avg:   X.XX
+or
+No scores provided
+📌 Test cases:
+Input: report(4, 7, 2, 9, 1)
+Output:
+Count: 5
+Sum:   23
+Min:   1
+Max:   9
+Avg:   4.60
+
+Input: report(42)
+Output:
+Count: 1
+Sum:   42
+Min:   42
+Max:   42
+Avg:   42.00
+
+Input: report(-5, -5, -5)
+Output:
+Count: 3
+Sum:   -15
+Min:   -5
+Max:   -5
+Avg:   -5.00
+
+Input: report()
+Output:
+No scores provided
