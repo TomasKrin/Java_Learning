@@ -20,18 +20,17 @@ public class StringsTask3 implements TaskProcessor {
 		atSymbolIndex = email.indexOf("@");
 		emailPart1 = email.substring(0 , atSymbolIndex);
 		emailPart2 = email.substring(atSymbolIndex);
+		
+		if (emailPart1.length() > 2) {
+			char firstLetter = emailPart1.charAt(0);
+			char lastLetter = emailPart1.charAt(emailPart1.length() - 1);
+			emailPart1 = firstLetter + "***" + lastLetter;
 
-
-		if (emailPart1.length() >= 2) {
-			for (int i = 1; i < emailPart1.length() - 1; i++) {
-				emailPart1 = emailPart1.replace(emailPart1.charAt(i) , '*');
-			}
 			email = emailPart1 + emailPart2;
 			System.out.println("Masked email: " + email);
 		} else {
 			System.out.println("Masked email: " + email);
 		}
-
 
 		scanner.close();
 	}
