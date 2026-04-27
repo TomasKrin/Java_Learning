@@ -15,10 +15,10 @@ public class StringsTask5 implements TaskProcessor {
 
 		System.out.print("Enter a sentence: ");
 		sentence = scanner.nextLine().trim();
-		sentenceSplitArr = sentence.split(" ");
-
-		String[] tempSentenceArray = new String[sentenceSplitArr.length];
+		sentenceSplitArr = sentence.split("\\s+");
 		
+		String[] tempSentenceArray = new String[sentenceSplitArr.length];
+
 		for (int i = sentenceSplitArr.length - 1; i >= 0; i--) {
 			stringBuilder.setLength(0);
 			String word = sentenceSplitArr[i];
