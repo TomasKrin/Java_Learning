@@ -29,7 +29,7 @@ public class StringsTask4 implements TaskProcessor {
 
 		// Second way:
 
-		for (char c: sentence.toLowerCase().toCharArray()) {
+		for (char c: sentence.toCharArray()) {
 			if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
 				vowels++;
 			} else if (Character.isLetter(c)) {
