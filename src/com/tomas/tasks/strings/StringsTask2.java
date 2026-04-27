@@ -14,11 +14,11 @@ public class StringsTask2 implements TaskProcessor {
 		String reversedText;
 
 		System.out.print("Enter some text: ");
-		text = scanner.nextLine().trim().toLowerCase().replace(" " , "");
+		text = scanner.nextLine().trim().replaceAll("[\\p{Z}\\p{C}\\p{P}\\p{S}]" , "");
 
 		reversedText = stringBuilder.append(text).reverse().toString();
 
-		if (text.equals(reversedText)) {
+		if (text.equalsIgnoreCase(reversedText)) {
 			System.out.println("Palindrome");
 		} else {
 			System.out.println("Not a Palindrome");
