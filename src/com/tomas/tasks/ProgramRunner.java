@@ -1,9 +1,9 @@
 package com.tomas.tasks;
 
-import com.tomas.tasks.conditions.ConditionsTask1;
+import com.tomas.tasks.strings.StringTask5VJ;
 
 public class ProgramRunner {
     public static void main(String[] args) {
-        new ConditionsTask1().run();
+        new StringTask5VJ().run();
     }
 }
