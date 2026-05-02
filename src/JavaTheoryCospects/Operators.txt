@@ -1,0 +1,86 @@
+Operators in java
+
+There are 3 types of operators in java:
+
+1. Unary operators - operators that accept single argument (++, --, etc.)
+
+int num = 1;
+num++;
+
+2. Binary operators - operators that accept two arguments (+, =, etc.)
+
+int a = 1;
+int b = 2;
+
+a + b;
+a == b;
+
+3. Ternary operators - operators that accept three arguments (condition ? :)
+
+int a = 1;
+int b = 2;
+
+a < b ? a : b;
+
+-----------------------------
+
+Operators could also be divided into 8 different categories:
+
+1. Arithmetic Operators (+ , - , * , / , %) - used to perform arithmetic operations on primitive numeric data types like int, float, double, etc.
+
+-----------------------------
+
+2. Unary Operators (--, ++) - ("covered above") used to increment, decrement or negate the value.
+
+Example:
+   	int a = 10;
+        int b = 10;
+
+        // Using unary operators
+        System.out.println("Postincrement : " + (a++));  --> 10
+        System.out.println("Preincrement : " + (++a));  --> 12
+
+        System.out.println("Postdecrement : " + (b--));  --> 10
+        System.out.println("Predecrement : " + (--b)); --> 8
+
+a++ or b-- returns the value first, then increments or decrements it.
+++a or --b increments or decrements first, then returns the updated value.
+
+-----------------------------
+
+3. Assignment operators (+= , -= , = , /= , *= , %=) - assigns the value from the right-hand side to a variable on the left.
+
+   int num = 10; 
+   num += 5;
+
+-----------------------------
+
+4. Relational operators (> , < , <= , >= , == , !=) - needs 2 operands, returns boolean, used to check for relations like equality, greater than, and less than. Mainly used in loop statements and conditional (if-else) statements.
+
+-----------------------------
+
+5. Logical operators (&& , || , !) - used to perform "logical AND", "logical OR" or a unary "NOT" (!) operations.
+
+-----------------------------
+
+6. Ternary operators (cond ? true : false) - it is a shorthand version of if-else statement.
+
+-----------------------------
+
+7. Bitwise operators (& , | , ^ , ~ , << , >> , >>>) - these operators perform at bit level. 
+	Bitwise operators manipulate individual bits using AND, OR, XOR, and NOT.
+		XOR operator (^) - for booleans, returns true if they are different; for 			integers, flips bits that differ between the two values (same as booleans but 			with 1 and 0 instead of true and false).
+
+	Shift operators move bits to the left or right, effectively multiplying or dividing by 		powers of two.
+
+-----------------------------
+
+8. instanceof Operator (instanceof) - used for type checking, can be used to test if an object is an instance of a class, a subclass or an interface.
+
+   
+        String str = "Hello";
+        System.out.println(str instanceof String);  --> true
+
+        Object obj = 10; 
+        System.out.println(obj instanceof Integer); --> true
+        System.out.println(obj instanceof String);  --> false

@@ -1,0 +1,49 @@
+break and continue in java loops.
+
+continue - skips the remaining statements (iteration) in the loop block, jumps to next loop iteration.
+
+break - breaks the loop, loop no longer iterates.
+
+continue skips the current iteration, while break stops the loop.
+
+There are 2 types of break statements:
+
+1. Unlabeled break - stops the innermost loop.
+
+2. Labeled break - lets us stop a specific outer loop.
+
+Example:
+
+outer:
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        if (j == 1) break outer; // exits both loops
+    }
+}
+
+--------------------------------------
+
+There are also 2 types of continue statements:
+
+1. Unlabeled continue - skips the current iteration of innermost loop.
+
+2. Labeled continue -  lets us skip the current iteration of the loop we target.
+
+Example:
+
+outer:
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        if (j == 1) continue outer; // skips to next iteration of outer loop
+    }
+}
+
+--------------------------------------
+
+Usage flow for better understanding:
+
+	- Inside inner loop, want to break/continue inner loop -> unlabeled break / 	continue.
+
+	- Inside inner loop, want to break/continue outer loop -> labeled break / 	continue.
+
+	- Inside outer loop, want to break/continue outer loop -> unlabeled break / 	continue (inner loops affected automatically).

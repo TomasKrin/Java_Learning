@@ -1,0 +1,63 @@
+Java reserved keywords.
+
+Java has reserved keywords that cannot be used as names for variables, classes, methods or any other identifiers.
+
+Most common keywords are:
+
+Data types:
+
+	- int, long, short, byte — integer number types of different sizes
+	- float, double — decimal number types
+	- char — single character
+	- boolean — true or false value
+	- void — used for methods that return nothing
+
+---------------------------
+
+Class and Object:
+
+	- class — declares a class
+	- interface — declares an interface
+	- enum — declares an enumeration
+	- extends — inherits from a class
+	- implements — implements an interface
+	- new — creates a new object
+	- this — refers to the current object
+	- super — refers to the parent class
+
+---------------------------
+
+Access modifiers:
+
+	- public — accessible from anywhere
+	- private — accessible only within the class
+	- protected — accessible within the class and subclasses
+
+---------------------------
+
+Control flow:
+
+	- if, else — conditional branching
+	- switch, case, default — multi-branch conditional
+	- for, while, do — loops
+	- break — exits a loop or switch
+	- continue — skips current loop iteration
+	- return — exits a method, optionally returning a value
+
+---------------------------
+
+Other common ones:
+
+	- static — belongs to the class rather than an instance
+	- final — makes a variable constant, a method non-overridable, or a class non-	inheritable
+	- abstract — declares a class or method without implementation
+	- instanceof — checks if an object is an instance of a class
+	- try, catch, finally — exception handling
+	- throw, throws — used to throw or declare exceptions
+
+---------------------------
+
+Package & Imports:
+
+	- package — declares which package the class belongs to
+	- import — imports classes or packages for use in the file

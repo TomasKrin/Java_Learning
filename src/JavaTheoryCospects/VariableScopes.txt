@@ -1,0 +1,16 @@
+Variable scope in java.
+
+Variable scope is where a variable can be accessed.
+
+There are 3 possible scopes of variables in java:
+
+1. Class scope - variables declared inside the class's brackets, but outside of any method. The scope is determined by where variables are declared, not the access modifiers. Access modifiers (private, public, protected) control visibility from other classes, but don't affect the scope itself.
+
+2. Method scope - variables declared inside a method, only valid inside the same method they were declared. This includes the parameters, which are declared in the method signature, but behave as method-scoped variables.
+
+3. Block scope - any set of {} creates its own scope. Variables declared inside are only accessible within that block. This includes:
+
+	- Loop blocks - for, while, do-while.
+	- Conditional blocks - if, else, switch.
+	- Exception blocks - try, catch, finally.
+	- Explicit blocks - {} written anywhere manually.

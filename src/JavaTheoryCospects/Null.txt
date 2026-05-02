@@ -1,0 +1,26 @@
+null in java
+
+null - a special value that a reference type variable can hold. It points to nothing in memory.
+
+The null reference can be cast to any other reference type.
+
+Example:
+
+Integer age = null; --> works fine
+List<String> names = null; --> works fine
+
+Boolean validReference = null; // works fine
+boolean validPrimitive = null; // this does not, because we try to cast to primitive type
+
+------------------------
+
+NullPointerException - exception that happens in runtime, when we try to use some property of that variable as if it wasn't null.
+
+Example:
+
+String name = null;
+name.toLowerCase(); // will cause exception at runtime, null means no value
+
+------------------------
+
+It is recommended, if possible to never initiate the variables with null, so that it would be easier to handle, and less cases of NullPointerException will come out.
