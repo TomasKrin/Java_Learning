@@ -28,6 +28,10 @@ public class ArrayTask1 implements TaskProcessor {
 
 		} catch (InputMismatchException _) {
 			System.out.println("Invalid input");
+		} catch (NegativeArraySizeException _) {
+			System.out.println("Array size cannot be negative");
+		} catch (ArrayIndexOutOfBoundsException _) {
+			System.out.println("Array size cannot be 0");
 		}
 
 		scanner.close();
