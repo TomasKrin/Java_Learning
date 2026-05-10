@@ -1,5 +1,6 @@
 https://www.youtube.com/watch?v=xTtL8E4LzTQ
 
+// solved
 2026-04-13: [47:25](intro, variables, user input).
 2026-04-14: [01:02:29](arithmetics).
 2026-04-15: [02:18:55](if statements, random numbers, Math class, printf, nested if statements,
@@ -8,6 +9,8 @@ string methods, substrings).
 2026-04-17: [04:04:27](while loops, for loops, break & continue, nested loops).
 2026-04-18: [05:03:26](methods, overloaded methods, variable scope).
 2026-04-26: [06:41:47](arrays, enter user input into an array, search an array, varargs, 2d arrays).
+
+// not solved
 2026-04-28: [07:08:22](object-oriented programming, constructors, overloaded constructors)
 2026-04-29: [07:41:37](array of objects, static keyword, inheritance, super).
 2026-05-04: [08:01:30](method overriding, toString method, abstraction).

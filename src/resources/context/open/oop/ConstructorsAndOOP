@@ -1,0 +1,223 @@
+🔹 🎯 Task 1: Class with Multiple Constructors
+
+You are building a Person class that can be instantiated in multiple ways: with full details (name and age), with just a name (age defaults), or with no arguments (both default).
+
+📥 Input:
+String name;
+int age;
+
+⚙️ Requirements:
+• Create a Person class with three constructor overloads:
+  - Person(String name, int age) - explicit values
+  - Person(String name) - age defaults to 18
+  - Person() - name defaults to "Unknown", age defaults to 0
+• Add a display() method that prints: "Name: <name>, Age: <age>"
+• In main(), create three Person objects using each constructor
+• Call display() on each object
+
+⚠️ Watch out:
+• In JS, you'd use default parameters in the function signature. Java has no default parameters — use constructor overloading instead.
+• Remember: constructor names MUST match the class name exactly, and Java is case-sensitive.
+
+📤 Output format:
+Name: <name1>, Age: <age1>
+Name: <name2>, Age: <age2>
+Name: <name3>, Age: <age3>
+
+📌 Test cases:
+Input: Person p1 = new Person("Alice", 25); Person p2 = new Person("Bob"); Person p3 = new Person();
+Output:
+Name: Alice, Age: 25
+Name: Bob, Age: 18
+Name: Unknown, Age: 0
+
+Input: Person p1 = new Person("Charlie", 30); Person p2 = new Person("Diana"); Person p3 = new Person();
+Output:
+Name: Charlie, Age: 30
+Name: Diana, Age: 18
+Name: Unknown, Age: 0
+
+Input: Person p1 = new Person("Eve", 5); Person p2 = new Person("Frank"); Person p3 = new Person();
+Output:
+Name: Eve, Age: 5
+Name: Frank, Age: 18
+Name: Unknown, Age: 0
+
+Input: Person p1 = new Person("Grace", 100); Person p2 = new Person("Henry"); Person p3 = new Person();
+Output:
+Name: Grace, Age: 100
+Name: Henry, Age: 18
+Name: Unknown, Age: 0
+
+---
+
+🔹 🎯 Task 2: Constructor Chaining with this()
+
+You are refactoring the Person class from Task 1 to avoid code duplication by using constructor chaining with this().
+
+📥 Input:
+String name;
+int age;
+
+⚙️ Requirements:
+• Create a Person class with three constructors:
+  - Person(String name, int age) - the "full" constructor with explicit logic
+  - Person(String name) - calls this(name, 18) to delegate to the full constructor
+  - Person() - calls this("Unknown") to delegate to the one-arg constructor
+• Add a getInfo() method that returns a String: "Person{name='<name>', age=<age>}"
+• In main(), create three Person objects using each constructor and print their getInfo()
+
+⚠️ Watch out:
+• The this() call MUST be the first statement in the constructor — no code before it.
+• In JS, you'd use super() in class inheritance or call a shared helper. In Java, this() is specifically for constructor delegation within the same class.
+• Do not duplicate initialization code — that defeats the purpose of chaining.
+
+📤 Output format:
+Person{name='<name1>', age=<age1>}
+Person{name='<name2>', age=<age2>}
+Person{name='<name3>', age=<age3>}
+
+📌 Test cases:
+Input: Person p1 = new Person("Alice", 25); Person p2 = new Person("Bob"); Person p3 = new Person();
+Output:
+Person{name='Alice', age=25}
+Person{name='Bob', age=18}
+Person{name='Unknown', age=0}
+
+Input: Person p1 = new Person("Charlie", 42); Person p2 = new Person("Diana"); Person p3 = new Person();
+Output:
+Person{name='Charlie', age=42}
+Person{name='Diana', age=18}
+Person{name='Unknown', age=0}
+
+Input: Person p1 = new Person("Eve", 1); Person p2 = new Person("Frank"); Person p3 = new Person();
+Output:
+Person{name='Eve', age=1}
+Person{name='Frank', age=18}
+Person{name='Unknown', age=0}
+
+Input: Person p1 = new Person("Grace", 99); Person p2 = new Person("Henry"); Person p3 = new Person();
+Output:
+Person{name='Grace', age=99}
+Person{name='Henry', age=18}
+Person{name='Unknown', age=0}
+
+---
+
+🔹 🎯 Task 3: Constructor with Field Initialization and Validation
+
+You are building a BankAccount class that initializes account details and validates input in the constructor.
+
+📥 Input:
+String accountHolder;
+double initialBalance;
+
+⚙️ Requirements:
+• Create a BankAccount class with:
+  - Private fields: accountHolder (String), balance (double), accountNumber (String, auto-generated)
+  - Constructor BankAccount(String accountHolder, double initialBalance) that:
+    - Stores the account holder name
+    - Validates that initialBalance >= 0 (if negative, print "Invalid balance" and set to 0.0)
+    - Auto-generates accountNumber as "ACC_" + (System.nanoTime() % 100000)
+  - Method getDetails() that prints: "Account: <accountNumber>, Holder: <accountHolder>, Balance: $<balance>"
+• In main(), create three BankAccount objects with valid and invalid balances
+
+⚠️ Watch out:
+• In JS, you'd often skip validation or throw an error casually. Java forces you to handle validation in the constructor — decide whether to throw an exception or silently correct the value.
+• System.nanoTime() returns a long; modulo arithmetic with ints can cause subtle issues if you're not careful about types.
+• Double precision: 0.1 + 0.2 != 0.3 in floating point. Not a trap here, but be aware of precision loss.
+
+📤 Output format:
+Invalid balance
+Account: ACC_<number>, Holder: <name>, Balance: $<amount>
+(repeated for each object)
+
+📌 Test cases:
+Input: new BankAccount("Alice", 100.0); new BankAccount("Bob", -50.0); new BankAccount("Charlie", 0.0);
+Output:
+Account: ACC_<number1>, Holder: Alice, Balance: $100.0
+Invalid balance
+Account: ACC_<number2>, Holder: Bob, Balance: $0.0
+Account: ACC_<number3>, Holder: Charlie, Balance: $0.0
+
+Input: new BankAccount("Diana", 5000.0); new BankAccount("Eve", -100.0); new BankAccount("Frank", 1.5);
+Output:
+Account: ACC_<number1>, Holder: Diana, Balance: $5000.0
+Invalid balance
+Account: ACC_<number2>, Holder: Eve, Balance: $0.0
+Account: ACC_<number3>, Holder: Frank, Balance: $1.5
+
+Input: new BankAccount("Grace", 999999.99); new BankAccount("Henry", -0.01);
+Output:
+Account: ACC_<number1>, Holder: Grace, Balance: $999999.99
+Invalid balance
+Account: ACC_<number2>, Holder: Henry, Balance: $0.0
+
+Input: new BankAccount("Ivy", 42.0); new BankAccount("Jack", -1000.0);
+Output:
+Account: ACC_<number1>, Holder: Ivy, Balance: $42.0
+Invalid balance
+Account: ACC_<number2>, Holder: Jack, Balance: $0.0
+
+---
+
+🔥 🎯 Bonus Task: Complex Constructor with Multiple Validation Rules
+
+You are building a User class for an authentication system with strict validation in the constructor.
+
+📥 Input:
+String username;
+String email;
+int age;
+
+⚙️ Requirements:
+• Create a User class with:
+  - Private fields: username, email, age, userId (auto-generated)
+  - Constructor User(String username, String email, int age) that validates:
+    - username is not empty and is alphanumeric (no spaces or special chars) — if invalid, print "Invalid username" and set to "guest"
+    - email contains "@" and ends with ".com" or ".org" — if invalid, print "Invalid email" and set to "noemail@test.com"
+    - age is between 13 and 120 — if invalid, print "Invalid age" and set to 18
+    - userId is auto-generated as "USER_" + username.toUpperCase() + "_" + (age * 1000)
+  - Method status() that prints: "User: <username> | Email: <email> | Age: <age> | ID: <userId>"
+• In main(), create five User objects with various valid and invalid combinations
+
+⚠️ Watch out:
+• String validation in Java requires methods like .contains(), .endsWith(), .matches(regex) — no simple string interpolation like JS.
+• Multiple validation points in one constructor can get messy. Plan your error messages carefully.
+• Age ranges require two comparison operators: age >= 13 && age <= 120 — easy to flip the logic.
+• String immutability: .toUpperCase() returns a new String; the original is unchanged.
+
+📤 Output format:
+Invalid username
+Invalid email
+Invalid age
+User: <username> | Email: <email> | Age: <age> | ID: <userId>
+(repeated for each object)
+
+📌 Test cases:
+Input: new User("alice123", "alice@test.com", 25); new User("bob user", "bob@invalid", 30); new User("charlie", "charlie@test.org", 150);
+Output:
+User: alice123 | Email: alice@test.com | Age: 25 | ID: USER_ALICE123_25000
+Invalid username
+Invalid email
+User: guest | Email: noemail@test.com | Age: 30 | ID: USER_GUEST_30000
+Invalid age
+User: charlie | Email: charlie@test.org | Age: 18 | ID: USER_CHARLIE_18000
+
+Input: new User("diana_special", "diana@test.com", 20); new User("eve", "eve@gmail.com", 17);
+Output:
+Invalid username
+User: guest | Email: noemail@test.com | Age: 20 | ID: USER_GUEST_20000
+User: eve | Email: eve@gmail.com | Age: 17 | ID: USER_EVE_17000
+
+Input: new User("frank", "frank@test.com", 12); new User("grace", "grace@test.com", 50);
+Output:
+Invalid age
+User: frank | Email: frank@test.com | Age: 18 | ID: USER_FRANK_18000
+User: grace | Email: grace@test.com | Age: 50 | ID: USER_GRACE_50000
+
+Input: new User("henry99", "henry@test.org", 35); new User("ivy", "ivy@test.net", 28);
+Output:
+User: henry99 | Email: henry@test.org | Age: 35 | ID: USER_HENRY99_35000
+Invalid email
+User: ivy | Email: noemail@test.com | Age: 28 | ID: USER_IVY_28000

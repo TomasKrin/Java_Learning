@@ -1,0 +1,263 @@
+🔹 🎯 Task 1: Array of Objects and Static Field
+
+You are building a Student registry that tracks students with a static counter.
+
+📥 Input:
+String[] names;
+int[] ages;
+
+⚙️ Requirements:
+• Create a Student class with:
+  - Private fields: name (String), age (int)
+  - Static field: totalStudents (int, initialized to 0)
+  - Constructor Student(String name, int age) that increments totalStudents
+  - Method info() that returns "Student{name='<name>', age=<age>}"
+  - Static method getTotalStudents() that returns totalStudents
+• In main(), create an array of 4 Student objects
+• Print each student's info
+• Print the total student count using the static method
+
+⚠️ Watch out:
+• Static fields are shared across ALL instances — they don't get reset when you create a new object. Each constructor call increments the same counter.
+• In JS, you'd use a WeakMap or closure to track instances. In Java, use a static field — it lives in metaspace, not on the heap per object.
+• Array initialization: Student[] students = new Student[4] creates the array, but you must still call new Student(...) for each element.
+
+📤 Output format:
+Student{name='<name1>', age=<age1>}
+Student{name='<name2>', age=<age2>}
+Student{name='<name3>', age=<age3>}
+Student{name='<name4>', age=<age4>}
+Total students: 4
+
+📌 Test cases:
+Input: names=["Alice", "Bob", "Charlie", "Diana"], ages=[20, 21, 19, 22]
+Output:
+Student{name='Alice', age=20}
+Student{name='Bob', age=21}
+Student{name='Charlie', age=19}
+Student{name='Diana', age=22}
+Total students: 4
+
+Input: names=["Eve", "Frank", "Grace", "Henry"], ages=[18, 19, 20, 18]
+Output:
+Student{name='Eve', age=18}
+Student{name='Frank', age=19}
+Student{name='Grace', age=20}
+Student{name='Henry', age=18}
+Total students: 4
+
+Input: names=["Ivy", "Jack", "Kate", "Leo"], ages=[21, 20, 22, 19]
+Output:
+Student{name='Ivy', age=21}
+Student{name='Jack', age=20}
+Student{name='Kate', age=22}
+Student{name='Leo', age=19}
+Total students: 4
+
+Input: names=["Maya", "Noah", "Oscar", "Piper"], ages=[19, 20, 21, 18]
+Output:
+Student{name='Maya', age=19}
+Student{name='Noah', age=20}
+Student{name='Oscar', age=21}
+Student{name='Piper', age=18}
+Total students: 4
+
+---
+
+🔹 🎯 Task 2: Inheritance and Method Override
+
+You are building a shape hierarchy where Circle and Rectangle inherit from Shape.
+
+📥 Input:
+double radius (for Circle);
+double length, width (for Rectangle);
+
+⚙️ Requirements:
+• Create a Shape class with:
+  - Protected field: name (String)
+  - Method getArea() that returns 0.0
+  - Method describe() that prints "Shape: <name>"
+• Create Circle class extending Shape with:
+  - Private field: radius
+  - Constructor Circle(double radius) that sets name to "Circle"
+  - Override getArea() to return π * radius²
+• Create Rectangle class extending Shape with:
+  - Private fields: length, width
+  - Constructor Rectangle(double length, double width) that sets name to "Rectangle"
+  - Override getArea() to return length * width
+• In main(), create one Circle and one Rectangle, call describe() on each, then print their areas
+
+⚠️ Watch out:
+• In JS, you'd prototype chain; in Java, you use extends and override methods. The child class can call super() implicitly or explicitly.
+• Math.PI is a static final constant in Java — use Math.PI, not M_PI or similar.
+• Polymorphism: describe() is inherited from Shape but works on both Circle and Rectangle without casting.
+
+📤 Output format:
+Shape: Circle
+Shape: Rectangle
+Circle area: X.XX
+Rectangle area: X.XX
+
+📌 Test cases:
+Input: Circle c = new Circle(5.0); Rectangle r = new Rectangle(4.0, 6.0);
+Output:
+Shape: Circle
+Shape: Rectangle
+Circle area: 78.54
+Rectangle area: 24.00
+
+Input: Circle c = new Circle(3.0); Rectangle r = new Rectangle(2.0, 8.0);
+Output:
+Shape: Circle
+Shape: Rectangle
+Circle area: 28.27
+Rectangle area: 16.00
+
+Input: Circle c = new Circle(10.0); Rectangle r = new Rectangle(5.0, 5.0);
+Output:
+Shape: Circle
+Shape: Rectangle
+Circle area: 314.16
+Rectangle area: 25.00
+
+Input: Circle c = new Circle(1.0); Rectangle r = new Rectangle(7.0, 3.0);
+Output:
+Shape: Circle
+Shape: Rectangle
+Circle area: 3.14
+Rectangle area: 21.00
+
+---
+
+🔹 🎯 Task 3: Using super() in Constructor
+
+You are building an employee hierarchy with Person as the base and Employee as the subclass.
+
+📥 Input:
+String name;
+int age;
+String employeeId;
+double salary;
+
+⚙️ Requirements:
+• Create a Person class with:
+  - Protected fields: name, age
+  - Constructor Person(String name, int age)
+  - Method info() that returns "Person{name='<name>', age=<age>}"
+• Create Employee class extending Person with:
+  - Private fields: employeeId, salary
+  - Constructor Employee(String name, int age, String employeeId, double salary) that calls super(name, age)
+  - Override info() to return "Employee{name='<name>', age=<age>, id='<employeeId>', salary=$<salary>}"
+• In main(), create two Employee objects and print their info
+
+⚠️ Watch out:
+• super() MUST be the first statement in the child constructor. You cannot initialize parent fields directly in the child constructor — you must delegate to super().
+• In JS, you'd call super() in a subclass constructor, but Java enforces it — if the parent has a constructor, the child MUST call super().
+• Overriding a method completely replaces the parent's version unless you explicitly call super.method() to use both.
+
+📤 Output format:
+Employee{name='<name1>', age=<age1>, id='<id1>', salary=$<salary1>}
+Employee{name='<name2>', age=<age2>, id='<id2>', salary=$<salary2>}
+
+📌 Test cases:
+Input: Employee e1 = new Employee("Alice", 30, "EMP001", 50000.0); Employee e2 = new Employee("Bob", 35, "EMP002", 60000.0);
+Output:
+Employee{name='Alice', age=30, id='EMP001', salary=$50000.0}
+Employee{name='Bob', age=35, id='EMP002', salary=$60000.0}
+
+Input: Employee e1 = new Employee("Charlie", 28, "EMP003", 45000.0); Employee e2 = new Employee("Diana", 32, "EMP004", 55000.0);
+Output:
+Employee{name='Charlie', age=28, id='EMP003', salary=$45000.0}
+Employee{name='Diana', age=32, id='EMP004', salary=$55000.0}
+
+Input: Employee e1 = new Employee("Eve", 29, "EMP005", 52000.0); Employee e2 = new Employee("Frank", 40, "EMP006", 70000.0);
+Output:
+Employee{name='Eve', age=29, id='EMP005', salary=$52000.0}
+Employee{name='Frank', age=40, id='EMP006', salary=$70000.0}
+
+Input: Employee e1 = new Employee("Grace", 26, "EMP007", 43000.0); Employee e2 = new Employee("Henry", 45, "EMP008", 80000.0};
+Output:
+Employee{name='Grace', age=26, id='EMP007', salary=$43000.0}
+Employee{name='Henry', age=45, id='EMP008', salary=$80000.0}
+
+---
+
+🔥 🎯 Bonus Task: Complex Inheritance with Array of Objects
+
+You are building a zoo management system with animals of different types in an array.
+
+📥 Input:
+String[] animalNames;
+String[] animalTypes; // "Dog" or "Cat"
+
+⚙️ Requirements:
+• Create an Animal abstract class (or use inheritance) with:
+  - Protected fields: name, type
+  - Constructor Animal(String name, String type)
+  - Method makeSound() that prints "<name> makes a generic sound"
+  - Method getDetails() that returns "Animal{name='<name>', type='<type>'}"
+• Create Dog class extending Animal with:
+  - Constructor Dog(String name) that calls super(name, "Dog")
+  - Override makeSound() to print "<name> barks"
+• Create Cat class extending Animal with:
+  - Constructor Cat(String name) that calls super(name, "Cat")
+  - Override makeSound() to print "<name> meows"
+• In main(), create an array of 4 animals (mix of dogs and cats), print each animal's details and sound
+
+⚠️ Watch out:
+• You'll store Dog and Cat objects in an Animal[] array. This is polymorphism — each object's makeSound() calls its own override, not the parent's.
+• In JS, you'd use duck typing; in Java, you need a common parent class or interface.
+• When calling makeSound() on an Animal[] array element, it calls the correct overridden method based on the actual object type, not the array type.
+• Array initialization with mixed types: Animal[] animals = new Animal[4]; animals[0] = new Dog("Rex"); animals[1] = new Cat("Whiskers");
+
+📤 Output format:
+Animal{name='<name1>', type='<type1>'}
+<name1> <sound>
+Animal{name='<name2>', type='<type2>'}
+<name2> <sound>
+(repeated for each animal)
+
+📌 Test cases:
+Input: Create Dog("Rex"), Dog("Max"), Cat("Whiskers"), Cat("Mittens")
+Output:
+Animal{name='Rex', type='Dog'}
+Rex barks
+Animal{name='Max', type='Dog'}
+Max barks
+Animal{name='Whiskers', type='Cat'}
+Whiskers meows
+Animal{name='Mittens', type='Cat'}
+Mittens meows
+
+Input: Create Dog("Buddy"), Cat("Luna"), Dog("Charlie"), Cat("Shadow")
+Output:
+Animal{name='Buddy', type='Dog'}
+Buddy barks
+Animal{name='Luna', type='Cat'}
+Luna meows
+Animal{name='Charlie', type='Dog'}
+Charlie barks
+Animal{name='Shadow', type='Cat'}
+Shadow meows
+
+Input: Create Dog("Daisy"), Dog("Spot"), Cat("Tiger"), Cat("Smokey")
+Output:
+Animal{name='Daisy', type='Dog'}
+Daisy barks
+Animal{name='Spot', type='Dog'}
+Spot barks
+Animal{name='Tiger', type='Cat'}
+Tiger meows
+Animal{name='Smokey', type='Cat'}
+Smokey meows
+
+Input: Create Cat("Fluffy"), Dog("Rover"), Cat("Patches"), Dog("Barkley")
+Output:
+Animal{name='Fluffy', type='Cat'}
+Fluffy meows
+Animal{name='Rover', type='Dog'}
+Rover barks
+Animal{name='Patches', type='Cat'}
+Patches meows
+Animal{name='Barkley', type='Dog'}
+Barkley barks
