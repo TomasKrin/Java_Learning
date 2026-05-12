@@ -22,12 +22,6 @@ why min and max values are as they are, what happens when we extend max value by
 6. What is null? How NullPointerException can be triggered and how it is handled? +
 7. Wrapper classes — what are they, how are they used, and why do we need them? +
 
-
-
-/ - partially checked
-+ - fully checked
-* - important, check deeper
-
 ----
 
 05-10
@@ -44,3 +38,7 @@ why min and max values are as they are, what happens when we extend max value by
 
 ----
 
+
+/ - partially checked
++ - fully checked
+* - important, check deeper
