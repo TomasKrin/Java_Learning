@@ -23,7 +23,8 @@ So to use JavaDoc we should use the JavaDoc comment.
 
 ------------------------------------------
 
-JavaDoc has special tags, that are used within JavaDoc comments to provide specific information about the code elements being documented. These tags help in enhancing the clarity and completeness of the generated documentation.
+JavaDoc has special tags, that are used within JavaDoc comments to provide specific information about the code elements
+being documented. These tags help in enhancing the clarity and completeness of the generated documentation.
 
 Most commonly used tags are:
 

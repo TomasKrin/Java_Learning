@@ -1,8 +1,11 @@
 Wrapper classes in Java
 
-Every primitive type in java has a corresponding wrapper class: Boolean, Byte, Short, Character, Integer, Long, Float, Double.
+Every primitive type in java has a corresponding wrapper class: Boolean, Byte, Short, Character, Integer, Long, Float,
+Double.
 
-Wrapper classes are objects that encapsulate primitive Java types. They are useful because generic classes only work with objects and don't support primitives — making wrapper classes essential for the Java Collections framework and other generic APIs.
+Wrapper classes are objects that encapsulate primitive Java types. They are useful because generic classes only work
+with objects and don't support primitives — making wrapper classes essential for the Java Collections framework and
+other generic APIs.
 
 -------------------------
 
@@ -10,7 +13,7 @@ Boxing & Unboxing:
 
 	- Boxing — storing a primitive value into a wrapper class object.
 	
-	- Auto-boxing — Java handles boxing automatically when assigning a primitive 	to a wrapper type variable.
+	- Auto-boxing — Java handles boxing automatically when assigning a primitive to a wrapper type variable.
 	
 	- Unboxing — extracting the primitive value back from a wrapper object.
 	
@@ -30,9 +33,10 @@ int primitiveValue = wrappedValue; // Java unboxes it automatically
 
 Creating & Converting:
 
-	- Simply assign like any regular variable — object initialization with new 	(e.g. new Integer(5)) has been deprecated since Java 9.
+	- Simply assign like any regular variable — object initialization with new (e.g. new Integer(5)) has been
+	deprecated since Java 9.
 	
-	- To convert back to a primitive, use methods like intValue(), doubleValue(), 	floatValue(), etc.
+	- To convert back to a primitive, use methods like intValue(), doubleValue(), floatValue(), etc.
 
 -------------------------
 
@@ -49,7 +53,7 @@ Wrapper classes also provide useful static methods and constants, here are a few
 
 Important Gotchas:
 
-	- Unlike primitives, wrapper objects can be null — auto-unboxing a null 	wrapper throws a NullPointerException.
+	- Unlike primitives, wrapper objects can be null — auto-unboxing a null wrapper throws a NullPointerException.
 
 	Example:
 
@@ -63,7 +67,7 @@ Important Gotchas:
 
 	-------------------------
 
-	- Boxing/unboxing has a performance overhead — in performance-sensitive loops, 	prefer primitives directly.
+	- Boxing/unboxing has a performance overhead — in performance-sensitive loops, prefer primitives directly.
 
 	Example:
 
@@ -81,7 +85,8 @@ Important Gotchas:
 
 	-------------------------
 
-	- Integer caches values between -128 and 127, so == comparison may give 	unexpected results outside that range — always use .equals() to compare 	wrapper objects.
+	- Integer caches values between -128 and 127, so == comparison may give unexpected results outside that range —
+	always use .equals() to compare wrapper objects.
 
 	Example:
 

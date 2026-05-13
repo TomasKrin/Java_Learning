@@ -1,0 +1,45 @@
+Stack and heap memory in Java
+
+Stack is a table like structure in memory which saves the variable name and either primitive value or a memory address
+to a reference value in heap.
+
+Heap is a memory space which stores object instances and their instance variables.
+
+--------------------------
+
+EXAMPLE: 
+
+int x = 5;                  // x and value 5 → stack
+Dog dog = new Dog("Rex");   // 'dog' reference → stack, Dog object → heap
+
+--------------------------
+
+Lifecycle / Scope
+
+	- Stack memory is automatically freed when a method finishes executing
+	- Heap memory is managed by the Garbage Collector — it cleans up objects that no longer have any references pointing
+	to them
+
+--------------------------
+
+Thread Safety
+
+	- Each thread gets its own stack — so stack memory is thread-safe by nature
+	- The heap is shared across all threads — which is why multithreading requires synchronization
+
+--------------------------
+
+Size & Speed
+
+	- Stack is much smaller but faster to access
+	- Heap is larger but slower — allocation and GC add overhead
+	- Running out of stack space throws StackOverflowError (e.g. infinite recursion)
+	- Running out of heap space throws OutOfMemoryError
+
+--------------------------
+
+What exactly lives where
+
+	- Stack: method calls, local variables, reference variables (the pointer itself)
+	- Heap: all objects created with new, instance variables, arrays
+	- String pool is a special part of the heap where string literals are cached / reused

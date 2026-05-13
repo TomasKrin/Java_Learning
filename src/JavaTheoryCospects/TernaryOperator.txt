@@ -14,7 +14,8 @@ It is the only operator that accepts 3 operands.
 
 The first operand must be a boolean expression (returns true/false).
 
-The second and third operands can be any expressions that are type-compatible with each other and with the variable where the result is used.
+The second and third operands can be any expressions that are type-compatible with each other and with the variable
+where the result is used.
 
 Ternary construct (operation) returns expression 1 if boolean expression (before ?) is true. 
 
@@ -22,7 +23,8 @@ Ternary construct (operation) returns expression 2 if boolean expression (before
 
 IMPORTANT!!! --> expression 1 and expression 2 must be expressions that return a value, not a void statement.
 
-When using Java ternary construct, only one of the right-hand side expressions (either expression 1 or expression 2) is evaluated at runtime, the other one is skipped.
+When using Java ternary construct, only one of the right-hand side expressions (either expression 1 or expression 2)
+is evaluated at runtime, the other one is skipped.
 
 ---------------------------------------------
 
