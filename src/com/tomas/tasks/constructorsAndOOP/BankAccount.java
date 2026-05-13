@@ -2,7 +2,7 @@ package com.tomas.tasks.constructorsAndOOP;
 
 public class BankAccount {
 	String accountHolder;
-	double balance;
+	double balance = 0.0;
 	String accountNumber;
 
 	BankAccount(String accountHolder , double initialBalance){
@@ -13,7 +13,6 @@ public class BankAccount {
 			this.balance = initialBalance;
 		} else {
 			System.out.println("Invalid balance");
-			this.balance = 0.0;
 		}
 
 		getDetails();
