@@ -32,7 +32,7 @@ why min and max values are as they are, what happens when we extend max value by
 
 05-10
 
-1. Java memory (static vs heap). What is stored on the stack and what is stored on the heap?
+1. Java memory (static vs heap). What is stored on the stack and what is stored on the heap? +
 2. What is garbage collector, how it works? Additionally, must : https://mukhteshpendem31.medium.com/java-memory-management-made-simple-understanding-generations-garbage-collection-and-more-8157362de5a8
 3. StackOverflowError and OutOfMemoryError exceptions
 4. Pass-by-value vs pass-by-reference. Which of these used in java? Why?
