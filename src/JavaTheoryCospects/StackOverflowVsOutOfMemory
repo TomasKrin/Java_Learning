@@ -1,0 +1,20 @@
+StackOverflowError and OutOfMemoryError in Java:
+
+- StackOverflowError — thrown when the call stack exceeds its limit.
+  Each method call adds a frame to the stack, if the stack grows too large JVM throws this error.
+  Cause: infinite or too deep recursion (a method keeps calling itself with no exit condition)
+  Fix: make sure recursion has a stopping point (base case), example:
+
+     void countdown(int n) {
+         if (n == 0) return;  // base case — stops recursion
+         countdown(n - 1);
+     }
+
+  if no base case exists, the method calls itself forever → StackOverflowError
+  alternatively, rewrite the logic using a loop instead of recursion
+
+- OutOfMemoryError — thrown when JVM cannot allocate memory for a new object in the heap.
+  GC runs but cannot free enough space, so JVM has no room for new allocations.
+  Cause: too many live objects, memory leaks, unbounded caches, loading too much data at once
+  Fix: review code for leaks, use proper caching strategies (e.g. LRU),
+       increase heap size with -Xmx flag (e.g. -Xmx512m sets max heap to 512MB)

@@ -1,0 +1,81 @@
+Final Keyword in Java
+
+-------------------------------
+
+What is final:
+- final means "cannot be changed after assignment"
+- can be applied to variables, method parameters, methods, and classes
+- each use has a different meaning, but the core idea is always: locked, unchangeable
+
+-------------------------------
+
+Final Variables (Constants):
+- once assigned, the value cannot be reassigned — compile-time error if you try
+- convention: name constants in ALL_CAPS with underscores
+
+  example:
+      final double PI = 3.14159;
+      final int MAX_SPEED = 120;
+      PI = 3.0; // compile-time error
+
+- combined with static for true class-level constants (most common):
+      static final int MAX_USERS = 100; // one value, shared, never changes
+
+- blank final variable — declared without value, must be assigned in constructor:
+      final int id;
+      MyClass(int id) { this.id = id; } // assigned once, then locked
+
+- important: final on an object reference locks the reference, NOT the object itself
+      final List<String> names = new ArrayList<>();
+      names.add("Alice");  // allowed — modifying the object
+      names = new ArrayList<>(); // compile-time error — reassigning the reference
+
+-------------------------------
+
+Final Method Parameters:
+- the parameter cannot be reassigned inside the method body
+- does not affect the caller — only prevents accidental reassignment inside the method
+
+  example:
+      void process(final int value) {
+          value = 10; // compile-time error
+      }
+
+- useful for making intent clear: "this parameter is not meant to be modified"
+
+-------------------------------
+
+Final Methods:
+- can be inherited by subclasses but cannot be overridden
+- guarantees the method's behavior stays exactly as defined in the parent class
+
+  example:
+      class Vehicle {
+          final void start() { System.out.println("Starting..."); }
+      }
+      class Car extends Vehicle {
+          void start() { ... } // compile-time error — cannot override final method
+      }
+
+- useful when a method's logic must stay consistent regardless of subclass
+
+-------------------------------
+
+Final Classes:
+- cannot be extended (no subclass can inherit from it)
+- all methods inside are implicitly final
+
+  example:
+      final class SecurityToken { ... }
+      class MyToken extends SecurityToken { } // compile-time error
+
+- real examples: String, Integer, Double — all final in Java
+- used when a class must remain unchanged for security or correctness reasons
+
+-------------------------------
+
+Quick reference:
+- final variable   → value cannot be reassigned
+- final parameter  → parameter cannot be reassigned inside the method
+- final method     → cannot be overridden by subclasses
+- final class      → cannot be extended (inherited)

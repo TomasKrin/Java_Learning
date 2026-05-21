@@ -1,9 +1,11 @@
 Stack and heap memory in Java
 
 Stack is a table like structure in memory which saves the variable name and either primitive value or a memory address
-to a reference value in heap.
+to a reference value in heap. Stack follows a Last-In-First-Out (LIFO) principle, meaning the last method that was
+called will finish first.
 
-Heap is a memory space which stores object instances and their instance variables.
+Heap is a memory space which stores object instances and their instance variables. The heap is divided into generations,
+that represent different stages of an object's lifecycle.
 
 --------------------------
 
@@ -16,7 +18,7 @@ Dog dog = new Dog("Rex");   // 'dog' reference → stack, Dog object → heap
 
 Lifecycle / Scope
 
-	- Stack memory is automatically freed when a method finishes executing
+	- Stack memory is automatically freed when a method finishes executing, the data is short-lived.
 	- Heap memory is managed by the Garbage Collector — it cleans up objects that no longer have any references pointing
 	to them
 

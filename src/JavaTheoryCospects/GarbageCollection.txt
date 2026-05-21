@@ -1,0 +1,74 @@
+Java Garbage Collection (GC)
+
+The JVM manages memory automatically, tracking objects and removing unused ones to prevent memory leaks.
+
+-------------------------------
+
+Two memory areas:
+
+- Stack — method calls and local variables; per-thread, short-lived, Last-In-First-Out(LIFO)
+- Heap — all objects; shared across threads, managed by GC
+
+-------------------------------
+
+Heap Generations:
+
+- Young Generation (Eden + S0/S1) — stores new objects, collected very frequently (Minor GC).
+  New objects start in Eden, survivors move to S0/S1, and after enough GC cycles get promoted to Old Generation.
+
+- Old Generation (Tenured) — stores long-lived survivors, collected infrequently (Major GC)
+
+- Metaspace (off-heap) — stores class metadata and method info, rarely collected
+
+-------------------------------
+
+How GC works (Mark-Sweep-Compact):
+
+1. Mark — starting from root references (static fields, active threads), follow all references and mark reachable
+objects as alive
+
+2. Sweep — remove everything not marked; reclaim that memory
+
+3. Compact — shift remaining objects together to eliminate fragmentation
+
+-------------------------------
+
+Two types of GC:
+
+- Minor GC — fast; cleans Young Generation when Eden fills up
+- Major GC (Full GC) — slow; cleans Old Generation (sometimes the whole heap); causes noticeable pauses
+
+-------------------------------
+
+GC Algorithms:
+
+- Serial GC — single-threaded, simple, suited for small applications
+
+- Parallel GC — multi-threaded, focuses on processing speed, causes pauses
+
+- G1 GC (default since Java 9) — divides heap into regions instead of strict generations, balances processing speed
+and pause times, good for large heaps
+
+- ZGC — very low pause times (sub-millisecond), handles very large heaps, Java 15+
+
+- Shenandoah — similar to ZGC, low pauses, does most work concurrently with the app
+
+-------------------------------
+
+finalize() and Reference Types:
+
+- finalize() — called by GC before an object is removed, deprecated since Java 9, unpredictable and slow, avoid using it
+- Soft Reference — GC keeps the object as long as memory allows, useful for caches
+- Weak Reference — GC removes it as soon as no strong reference exists, useful for mappings
+- Phantom Reference — object already finalized, used for cleanup tracking
+
+-------------------------------
+
+Memory Leaks in Java:
+
+Despite GC, leaks can still happen when objects are referenced but never used again:
+
+- Static collections — objects added to a static list/map and never removed stay in memory forever
+- Unclosed streams — forgetting to close I/O streams or DB connections holds resources
+- Listeners/callbacks — registering event listeners without deregistering them keeps objects alive
+- Caching without limits — unbounded caches grow indefinitely; use soft references or LRU cache (Least Recently Used)

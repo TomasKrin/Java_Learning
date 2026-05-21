@@ -1,0 +1,45 @@
+Java Properties
+
+-------------------------------
+
+What is it:
+- A .properties file is a plain text file that stores configuration data
+  as key=value pairs outside of your compiled code
+- Managed via java.util.Properties class (java.util.Properties)
+- Lines starting with # are comments and are ignored
+
+Example .properties file:
+  db.url=localhost
+  db.user=admin
+  db.password=secret
+  # this is a comment
+
+-------------------------------
+
+How to use it:
+  Properties props = new Properties();
+
+  // load from file
+  props.load(new FileInputStream("config.properties"));
+
+  // read a value
+  String url = props.getProperty("db.url");
+
+  // set a value
+  props.setProperty("db.url", "newhost");
+
+  // save back to file
+  props.store(new FileOutputStream("config.properties"), "comment");
+
+-------------------------------
+
+Why it's useful:
+- Separates configuration from code — no need to recompile when a value changes
+- Common use cases: database credentials, file paths, app settings, localization strings
+- Can be stored anywhere in the project, even inside a .jar file
+- Easy to read and edit without touching source code
+
+Example benefit:
+  Instead of hardcoding "localhost" in 10 places across your code,
+  store it once in config.properties and read it wherever needed.
+  When it changes, update only the file — not the code.
