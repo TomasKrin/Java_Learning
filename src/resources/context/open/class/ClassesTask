@@ -1,0 +1,107 @@
+🔹 🎯 Task 1: Static Nested Class
+You are building a Car class with a static nested Engine class.
+📥 Input:
+No input required.
+⚙️ Requirements:
+• Create a Car class
+• Inside it, create a static nested class Engine
+• Engine should have a method info() that returns: "Engine ready"
+• Call Engine.info() from main without creating a Car object
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Engine ready
+📌 Test cases:
+Input: none
+Output:
+Engine ready
+
+🔹 🎯 Task 2: Inner Class (Non‑Static Nested)
+You are building a Car class with an inner Wheel class.
+📥 Input:
+No input required.
+⚙️ Requirements:
+• Create a Car class with a field model
+• Inside it, create a non‑static inner class Wheel
+• Wheel should access model and return: "Wheel for <model>"
+• Create a Car object, then create a Wheel object and print its message</model>
+📌 Constraints:
+• The inner class must be non‑static
+• Output must match the required format exactly
+📤 Output format:
+Wheel for <model>
+📌 Test cases:
+Input: model = "Civic"
+Output:
+Wheel for Civic</model>
+
+🔹 🎯 Task 3: Local Class (Inside a Method)
+You are creating a class inside a method to format a message.
+📥 Input:
+String name;
+⚙️ Requirements:
+• Create a method greet(String name)
+• Inside it, define a local class Greeter with method message()
+• message() should return: "Hello, <name>"
+• Use the local class inside greet() and print the result</name>
+📌 Constraints:
+• The local class must be declared inside the method
+• Output must match the required format exactly
+📤 Output format:
+Hello, <name>
+📌 Test cases:
+Input: name = "Tom"
+Output:
+Hello, Tom</name>
+
+🔹 🎯 Task 4: Anonymous Class
+You are using an anonymous class to implement an interface.
+📥 Input:
+String text;
+⚙️ Requirements:
+• Create an interface Printer with method print()
+• In main, create an anonymous class that implements Printer
+• print() should return: "Printed: <text>"
+• Call print() and output the result</text>
+📌 Constraints:
+• The class must be anonymous (no named class)
+• Output must match the required format exactly
+📤 Output format:
+Printed: <text>
+📌 Test cases:
+Input: text = "Java"
+Output:
+Printed: Java</text>
+
+🔥 🎯 Bonus Task: All Nested Class Types in One Program
+You are building a demo app that uses all four types of nested classes.
+📥 Input:
+String model;
+String user;
+⚙️ Requirements:
+• Create a class Gadget with:
+A static nested class Specs that returns: "Specs loaded"
+An inner class Owner that returns: "Owner: <user>"
+• Inside a method show(), create a local class Label that returns: "Model: <model>"
+• In main, create an anonymous class implementing interface Notifier with method notifyUser() returning: "Notify <user>"
+• Print all four messages in this order: </user></model></user>
+Specs loaded
+Owner: <user> </user>
+Model: <model> </model>
+Notify <user> </user>
+📌 Constraints:
+• Use all four nested class types in a single program
+• Output order must match exactly
+📤 Output format:
+Specs loaded
+Owner: <user>
+Model: <model>
+Notify <user></user></model></user>
+📌 Test cases:
+Input: model = "XPhone", user = "Anna"
+Output:
+Specs loaded
+Owner: Anna
+Model: XPhone
+Notify Anna

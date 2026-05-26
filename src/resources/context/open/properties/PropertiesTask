@@ -1,0 +1,42 @@
+🔹 🎯 Task: Read Configuration Using Java Properties
+You are building a small app that loads settings from a .properties file.
+📥 Input:
+File: app.properties
+Keys:
+app.name=MyApp
+app.version=1.0
+app.debug=true
+⚙️ Requirements:
+• Create a app.properties file with the keys above
+• Load the file using the Java Properties API
+• Read each key and print:
+"Name: <app.name>"
+"Version: <app.version>"
+"Debug: <app.debug>"
+• If a key is missing, print a default value:
+Name → "Unknown"
+Version → "0.0"
+Debug → "false"
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Name: <value>
+Version: <value>
+Debug: <value></value></value></value>
+📌 Test cases:
+Input file:
+app.name=MyApp
+app.version=1.0
+app.debug=true
+Output:
+Name: MyApp
+Version: 1.0
+Debug: true
+Input file (missing app.version):
+app.name=MyApp
+app.debug=true
+Output:
+Name: MyApp
+Version: 0.0
+Debug: true

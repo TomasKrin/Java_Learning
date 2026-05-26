@@ -1,0 +1,124 @@
+🔹 🎯 Task 1: Parsing Numbers with Wrapper Classes
+You are building a utility that converts user input into numbers using wrapper classes.
+📥 Input:
+String input1;
+String input2;
+⚙️ Requirements:
+• Convert input1 into a whole number using a wrapper-class conversion method
+• Convert input2 into a decimal number using a wrapper-class conversion method
+• Calculate the sum of the two numbers as double
+• Print: "Sum: <sum>"</sum>
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Sum: <sum>
+📌 Test cases:
+Input: input1 = "10"; input2 = "5.5";
+Output:
+Sum: 15.5
+Input: input1 = "3"; input2 = "2.25";
+Output:
+Sum: 5.25
+Input: input1 = "100"; input2 = "0.1";
+Output:
+Sum: 100.1</sum>
+
+🔹 🎯 Task 2: Wrapper Comparison and Caching
+You are testing how Integer objects compare using == and equals().
+📥 Input:
+Integer a = 100;
+Integer b = 100;
+Integer c = 200;
+Integer d = 200;
+⚙️ Requirements:
+• Compare a and b using reference comparison and value comparison
+• Compare c and d using reference comparison and value comparison
+• Print results in this order:
+"a == b: <true/false>"
+"a.equals(b): <true/false>"
+"c == d: <true/false>"
+"c.equals(d): <true/false>"
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+a == b: <true/false>
+a.equals(b): <true/false>
+c == d: <true/false>
+c.equals(d): <true/false>
+📌 Test cases:
+Input: a=100, b=100, c=200, d=200
+Output:
+a == b: true
+a.equals(b): true
+c == d: false
+c.equals(d): true
+
+🔹 🎯 Task 3: Wrapper Null Handling
+You are building a score tracker that uses Integer instead of int.
+📥 Input:
+Integer score1;
+Integer score2;
+⚙️ Requirements:
+• If score1 is null, treat it as 0
+• If score2 is null, treat it as 0
+• Calculate total = score1 + score2
+• Print: "Total: <total>"</total>
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Total: <total>
+📌 Test cases:
+Input: score1 = 10; score2 = 5;
+Output:
+Total: 15
+Input: score1 = null; score2 = 7;
+Output:
+Total: 7
+Input: score1 = null; score2 = null;
+Output:
+Total: 0</total>
+
+ 🎯 Bonus Task: Wrapper Parsing, Validation, and Safe Defaults
+You are building a user input parser that converts text into wrapper values and validates them.
+📥 Input:
+String ageInput;
+String scoreInput;
+String activeInput;
+⚙️ Requirements:
+• Convert ageInput to an Integer
+• Convert scoreInput to a Double
+• Convert activeInput to a Boolean
+• If any conversion fails, use a default:
+age → 0
+score → 0.0
+active → false
+• Print:
+"Age: <age>"
+"Score: <score>"
+"Active: <active>" </active></score></age>
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Age: <age>
+Score: <score>
+Active: <active></active></score></age>
+📌 Test cases:
+Input: ageInput = "25", scoreInput = "98.5", activeInput = "true"
+Output:
+Age: 25
+Score: 98.5
+Active: true
+Input: ageInput = "abc", scoreInput = "x", activeInput = "yes"
+Output:
+Age: 0
+Score: 0.0
+Active: false
+Input: ageInput = "-5", scoreInput = "0.1", activeInput = "FALSE"
+Output:
+Age: -5
+Score: 0.1
+Active: false
