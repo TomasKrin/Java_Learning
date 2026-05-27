@@ -1,4 +1,4 @@
-package com.tomas.tasks.constructorsAndOOP;
+package com.tomas.tasks.constructorsAndOOP.constructorsAndOOPTask4;
 
 public class User {
 	private final String userId;
@@ -25,7 +25,7 @@ public class User {
 			System.out.println("Invalid age");
 		}
 
-		this.userId = "USER_" + username.toUpperCase() + "_" + (this.age * 1000);
+		this.userId = "USER_" + this.username.toUpperCase() + "_" + (this.age * 1000);
 
 		status();
 	}
