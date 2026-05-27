@@ -21,15 +21,11 @@ public class InheritanceTask1 implements TaskProcessor {
 		Student[] students = new Student[studentNames.length];
 
 		for (int i = 0; i < students.length; i++) {
-			try {
-				students[i] = new Student(studentNames[i] , studentAges[i]);
-				System.out.println(students[i].info());
-			} catch (ArrayIndexOutOfBoundsException _) {
-				break;
-			}
+			students[i] = new Student(studentNames[i] , studentAges[i]);
+			System.out.println(students[i].info());
 		}
 
-		System.out.println("Total Students: " + students[0].getTotalStudents());
+		System.out.println("Total Students: " + Student.getTotalStudents());
 
 	}
 }
