@@ -1,9 +1,9 @@
 package com.tomas.tasks;
 
-import com.tomas.tasks.inheritance.inheritanceTask1.InheritanceTask1;
+import com.tomas.tasks.conditions.ConditionsTask1;
 
 public class ProgramRunner {
 	public static void main(String[] args){
-		new InheritanceTask1().run();
+		new ConditionsTask1().run();
 	}
 }
