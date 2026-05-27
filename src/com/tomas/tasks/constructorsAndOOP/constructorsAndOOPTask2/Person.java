@@ -1,4 +1,4 @@
-package com.tomas.tasks.constructorsAndOOP;
+package com.tomas.tasks.constructorsAndOOP.constructorsAndOOPTask2;
 
 public class Person {
 	String name;
