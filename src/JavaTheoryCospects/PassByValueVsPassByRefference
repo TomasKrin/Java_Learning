@@ -1,0 +1,45 @@
+Pass by Value vs Pass by Reference in Java:
+
+Java is strictly pass-by-value, always. No exceptions.
+The confusion comes from how Java handles objects.
+
+Primitives (int, boolean, double, etc.):
+- A copy of the value is passed to the method
+- Changes inside the method do not affect the original variable
+  example:
+
+      void change(int n) { n = 10; }
+      int x = 5;
+      change(x);
+      // x is still 5
+
+Objects:
+- A copy of the reference (memory address) is passed, not the object itself
+- Changes to the object's fields inside the method DO affect the original
+  because both variables point to the same object in heap
+  example:
+      void change(Dog d) { d.name = "Rex"; }
+      Dog dog = new Dog("Buddy");
+      change(dog);
+      // dog.name is now "Rex"
+
+- However, reassigning the reference inside the method does NOT affect the original
+  example:
+      void change(Dog d) { d = new Dog("Rex"); }
+      Dog dog = new Dog("Buddy");
+      change(dog);
+      // dog is still "Buddy", the reassignment only affected the local copy
+
+-------------------------------
+
+Why pass-by-value only:
+- Security and simplicity — Java was designed without direct pointer manipulation
+  (unlike C/C++) to avoid memory vulnerabilities from accessing addresses directly.
+  Passing copies of values instead of direct references keeps this guarantee intact.
+  (James Gosling, Java's creator, confirmed this: "it's pass-by-value for everything,
+  with the twist that for class instances, the thing passed is the pointer to the object")
+
+Key takeaway:
+- Java passes a copy of the value always
+- For objects, that value is the reference (memory address)
+- You can modify what the reference points to, but you cannot change the reference itself

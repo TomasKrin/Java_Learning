@@ -26,7 +26,8 @@ a < b ? a : b;
 
 Operators could also be divided into 8 different categories:
 
-1. Arithmetic Operators (+ , - , * , / , %) - used to perform arithmetic operations on primitive numeric data types like int, float, double, etc.
+1. Arithmetic Operators (+ , - , * , / , %) - used to perform arithmetic operations on primitive numeric data types
+like int, float, double, etc.
 
 -----------------------------
 
@@ -48,14 +49,16 @@ a++ or b-- returns the value first, then increments or decrements it.
 
 -----------------------------
 
-3. Assignment operators (+= , -= , = , /= , *= , %=) - assigns the value from the right-hand side to a variable on the left.
+3. Assignment operators (+= , -= , = , /= , *= , %=) - assigns the value from the right-hand side to a variable on
+the left.
 
    int num = 10; 
    num += 5;
 
 -----------------------------
 
-4. Relational operators (> , < , <= , >= , == , !=) - needs 2 operands, returns boolean, used to check for relations like equality, greater than, and less than. Mainly used in loop statements and conditional (if-else) statements.
+4. Relational operators (> , < , <= , >= , == , !=) - needs 2 operands, returns boolean, used to check for relations
+like equality, greater than, and less than. Mainly used in loop statements and conditional (if-else) statements.
 
 -----------------------------
 
@@ -69,14 +72,15 @@ a++ or b-- returns the value first, then increments or decrements it.
 
 7. Bitwise operators (& , | , ^ , ~ , << , >> , >>>) - these operators perform at bit level. 
 	Bitwise operators manipulate individual bits using AND, OR, XOR, and NOT.
-		XOR operator (^) - for booleans, returns true if they are different; for 			integers, flips bits that differ between the two values (same as booleans but 			with 1 and 0 instead of true and false).
+		XOR operator (^) - for booleans, returns true if they are different; for integers, flips bits that differ
+		between the two values (same as booleans but with 1 and 0 instead of true and false).
 
-	Shift operators move bits to the left or right, effectively multiplying or dividing by 		powers of two.
+	Shift operators move bits to the left or right, effectively multiplying or dividing by powers of two.
 
 -----------------------------
 
-8. instanceof Operator (instanceof) - used for type checking, can be used to test if an object is an instance of a class, a subclass or an interface.
-
+8. instanceof Operator (instanceof) - used for type checking, can be used to test if an object is an instance of a
+class, a subclass or an interface.
    
         String str = "Hello";
         System.out.println(str instanceof String);  --> true

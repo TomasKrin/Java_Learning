@@ -1,0 +1,113 @@
+Nested Classes in Java
+
+-------------------------------
+
+What are nested classes:
+- a class defined inside another class
+- used to logically group classes that belong together,
+  improve encapsulation, and keep code closer to where it's used
+- 4 types: static nested, inner (non-static), local, anonymous
+
+-------------------------------
+
+1. Static Nested Class:
+- declared with static keyword inside an outer class
+- belongs to the outer CLASS, not to any instance of it
+- cannot access non-static members of the outer class directly
+  (needs an object reference to do so, just like any other class)
+- can be instantiated without creating an instance of the outer class
+
+  example:
+      class Outer {
+          private static int x = 10;
+          private int y = 20;
+
+          static class Nested {
+              void show() {
+                  System.out.println(x);   // allowed — static member
+                  System.out.println(y);   // compile-time error — non-static member
+              }
+          }
+      }
+      Outer.Nested obj = new Outer.Nested(); // no Outer instance needed
+
+  when to use: when the nested class doesn't need access to instance members
+               of the outer class (logically grouped but independent)
+
+-------------------------------
+
+2. Inner Class (Non-Static Nested Class):
+- declared without static keyword inside an outer class
+- tied to an instance of the outer class — cannot exist without one
+- has direct access to ALL members of the outer class, including private ones
+
+  example:
+      class Outer {
+          private int x = 10;
+
+          class Inner {
+              void show() {
+                  System.out.println(x); // allowed — has access to outer instance
+              }
+          }
+      }
+      Outer outer = new Outer();
+      Outer.Inner inner = outer.new Inner(); // outer instance required
+
+  when to use: when the inner class needs access to instance fields/methods
+               of the outer class
+
+-------------------------------
+
+3. Local Class:
+- defined inside a method or a block, not at class level
+- only visible within that method/block — cannot be used outside it
+- can access members of the enclosing class and local variables
+  that are final or effectively final (not reassigned after declaration)
+- cannot have access modifiers (private/public/etc.)
+
+  example:
+      class Outer {
+          void doSomething() {
+              final String message = "Hello";
+
+              class Local {
+                  void print() {
+                      System.out.println(message); // allowed — effectively final
+                  }
+              }
+              new Local().print();
+          }
+      }
+
+  when to use: when you need a class with multiple methods used only
+               in one specific method — rare in practice
+
+-------------------------------
+
+4. Anonymous Class:
+- a class with no name, defined and instantiated at the same time
+- used to override a class or implement an interface on the spot, once
+- cannot have a constructor (no name to call)
+- can access enclosing class members and effectively final local variables
+
+  example:
+      Runnable r = new Runnable() {
+          public void run() {
+              System.out.println("Running!");
+          }
+      };
+      r.run();
+
+  when to use: when you need a one-time implementation of an interface
+               or subclass, without creating a named class for it
+  note: since Java 8, lambda expressions replaced most anonymous class
+        use cases when only one method needs to be implemented
+
+-------------------------------
+
+Quick reference:
+- Static Nested — no outer instance needed, accesses static members only
+- Inner — requires outer instance, accesses all outer members (even private)
+- Local — exists only inside a method, accesses effectively final locals
+- Anonymous — no name, defined and used once, no constructor allowed

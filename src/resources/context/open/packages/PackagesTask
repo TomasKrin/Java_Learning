@@ -1,0 +1,31 @@
+🔹 🎯 Task: Packages and Imports (Explicit vs Wildcard)
+You are organizing a small project using packages and different import styles.
+📥 Input:
+No input required.
+⚙️ Requirements:
+• Create two packages:
+com.app.utils
+com.app.models
+• In com.app.models, create classes User and Product
+• In com.app.utils, create class Printer with method print(String text)
+• In Main, demonstrate:
+Explicit import of User
+Wildcard import of all classes from com.app.models
+Explicit import of Printer
+• Print:
+"User created"
+"Product created"
+"Printed"
+📌 Constraints:
+• Use package naming convention (lowercase, dot-separated)
+• Output must match the required format exactly
+📤 Output format:
+User created
+Product created
+Printed
+📌 Test cases:
+Input: none
+Output:
+User created
+Product created
+Printed

@@ -1,0 +1,115 @@
+🔹 🎯 Task 1: Final Variables (Constants and Convention)
+You are creating constants for a simple calculator.
+📥 Input:
+No input required.
+⚙️ Requirements:
+• Declare a constant PI using final
+• Use uppercase naming convention
+• Print: "PI = <value>"
+• Try to reassign PI and observe the compiler error</value>
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+PI = <value>
+📌 Test cases:
+Input: none
+Output:
+PI = 3.14159</value>
+
+🔹 🎯 Task 2: Final Reference vs Object Mutation
+You are testing how final works with object references.
+📥 Input:
+StringBuilder sb = new StringBuilder("Hello");
+⚙️ Requirements:
+• Mark sb as final
+• Append " World" to it
+• Try to reassign sb to a new StringBuilder and observe the error
+• Print the final content
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+<value>
+📌 Test cases:
+Input: "Hello"
+Output:
+Hello World</value>
+
+🔹 🎯 Task 3: Final Method Parameters
+You are creating a method that should not reassign its input.
+📥 Input:
+int number = 5;
+⚙️ Requirements:
+• Create a method increase(final int n)
+• Try to reassign n inside the method and observe the compiler error
+• Return n + 1 instead
+• Print the result
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Result: <value>
+📌 Test cases:
+Input: 5
+Output:
+Result: 6</value>
+
+🔹 🎯 Task 4: Final Methods (No Overriding)
+You are preventing a method from being overridden.
+📥 Input:
+Create a parent class and a child class.
+⚙️ Requirements:
+• In the parent class, create a final method show()
+• Try to override show() in the child class and observe the compiler error
+• Keep only the parent method and call it from a child object
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Message from parent
+📌 Test cases:
+Input: none
+Output:
+Message from parent
+
+🔹 🎯 Task 5: Final Classes (No Inheritance)
+You are designing a class that should not be extended.
+📥 Input:
+Create a class SecureConfig.
+⚙️ Requirements:
+• Mark SecureConfig as final
+• Try to extend it in another class and observe the compiler error
+• Use the final class normally in main
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Config loaded
+📌 Test cases:
+Input: none
+Output:
+Config loaded
+
+🔥 🎯 Bonus Task: Immutable User Profile (Discover & Implement)
+You are creating a UserProfile class that should not allow its state to change after creation.
+📥 Input:
+String name;
+int age;
+⚙️ Requirements:
+• Design the class so it cannot be modified after construction
+• Provide a way to read the fields
+• Add a method getInfo() that returns:
+"User{name='<name>', age=<age>}"</age></name>
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+User{name='<name>', age=<age>}
+📌 Test cases:
+Input: new UserProfile("Alice", 25);
+Output:
+User{name='Alice', age=25}
+Input: new UserProfile("Bob", 18);
+Output:
+User{name='Bob', age=18}</age></name>

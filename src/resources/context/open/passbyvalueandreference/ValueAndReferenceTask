@@ -1,0 +1,57 @@
+🔹 🎯 Task 1: Passing Primitives (Value Copy)
+You are testing how primitive values behave when passed to a method.
+📥 Input:
+int x = 10;
+⚙️ Requirements:
+• Create a method modify(int value) that adds 5 to its parameter
+• Call the method with x
+• Print x after the call
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+x = <value>
+📌 Test cases:
+Input: x = 10
+Output:
+x = 10</value>
+
+🔹 🎯 Task 2: Passing Object References (Mutation vs Reassignment)
+You are testing what happens when you modify an object vs reassign it.
+📥 Input:
+StringBuilder sb = new StringBuilder("Hi");
+⚙️ Requirements:
+• Create a method changeText(StringBuilder b) that appends "!"
+• Create a method reassign(StringBuilder b) that sets b to a new StringBuilder("Bye")
+• Call both methods and print sb after each call
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+After changeText: <value>
+After reassign: <value>
+📌 Test cases:
+Input: sb = "Hi"
+Output:
+After changeText: Hi!
+After reassign: Hi!</value></value>
+
+🔹 🎯 Task 3: Arrays and Pass-by-Value
+You are testing how arrays behave when passed to a method.
+📥 Input:
+int[] nums = {1, 2, 3};
+⚙️ Requirements:
+• Create a method updateFirst(int[] arr) that sets arr[0] = 99
+• Create a method swapArray(int[] arr) that assigns arr = new int[]{7,8,9}
+• Call both methods and print nums after each call
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+After updateFirst: [99, 2, 3]
+After swapArray: [99, 2, 3]
+📌 Test cases:
+Input: nums = {1,2,3}
+Output:
+After updateFirst: [99, 2, 3]
+After swapArray: [99, 2, 3]

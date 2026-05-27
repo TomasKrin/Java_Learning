@@ -1,0 +1,34 @@
+🔥 🎯 Bonus Task: Type-Based Processor with instanceof
+You are building a processor that handles different object types differently.
+📥 Input:
+Object item;
+⚙️ Requirements:
+• Create classes Book, Movie, and Game
+• Each class should have a title field
+• Movie should also have an int duration
+• Game should also have a String platform
+• Write a method describe(Object item) that uses instanceof to:
+If item is Book → return "Book: <title>" </li></title>
+If item is Movie → return "Movie: <title> (</title><duration> min)" </duration>
+If item is Game → return "Game: <title> [</title><platform>]" </platform>
+Otherwise → return "Unknown item"
+• In main, create one object of each type and print the result of describe()
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Book: <title></title>
+Movie: <title> (</title><duration> min)
+Game: <title> [</title><platform>]
+Unknown item</platform></duration>
+📌 Test cases:
+Input:
+Book("Dune")
+Movie("Inception", 148)
+Game("Minecraft", "PC")
+"Hello"
+Output:
+Book: Dune
+Movie: Inception (148 min)
+Game: Minecraft [PC]
+Unknown item

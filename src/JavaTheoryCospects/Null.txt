@@ -14,7 +14,8 @@ boolean validPrimitive = null; // this does not, because we try to cast to primi
 
 ------------------------
 
-NullPointerException - exception that happens in runtime, when we try to use some property of that variable as if it wasn't null.
+NullPointerException - exception that happens in runtime, when we try to use some property of that variable as if
+it wasn't null.
 
 Example:
 
@@ -23,4 +24,5 @@ name.toLowerCase(); // will cause exception at runtime, null means no value
 
 ------------------------
 
-It is recommended, if possible to never initiate the variables with null, so that it would be easier to handle, and less cases of NullPointerException will come out.
+It is recommended, if possible to never initiate the variables with null, so that it would be easier to handle,
+and less cases of NullPointerException will come out.

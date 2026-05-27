@@ -1,0 +1,123 @@
+🔹 🎯 Task 1: Static vs Instance Fields
+You are building a Counter class to observe how static fields are shared.
+📥 Input:
+Create three Counter objects.
+⚙️ Requirements:
+• Add an instance field id that is different for each object
+• Add a static field totalCount that increases every time a new object is created
+• Print each object’s id and the shared totalCount
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Counter{id=<id>, total=<totalcount>}
+(repeat for each object)
+📌 Test cases:
+Input: create 3 counters
+Output:
+Counter{id=1, total=3}
+Counter{id=2, total=3}
+Counter{id=3, total=3}</totalcount></id>
+
+🔹 🎯 Task 2: Static Method Utility
+You are building a utility class with static methods.
+📥 Input:
+int a;
+int b;
+⚙️ Requirements:
+• Create a MathUtils class with a static method max(int a, int b)
+• Call the method without creating an object
+• Print: "Max: <value>"</value>
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Max: <value>
+📌 Test cases:
+Input: a=10, b=20
+Output:
+Max: 20
+Input: a=7, b=3
+Output:
+Max: 7</value>
+
+🔹 🎯 Task 3: Static Initialization Block
+You are initializing configuration values using a static block.
+📥 Input:
+No input required.
+⚙️ Requirements:
+• Create a class with a static field VERSION
+• Initialize VERSION inside a static block
+• Print the value in main
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Version: <value>
+📌 Test cases:
+Input: none
+Output:
+Version: 1.0</value>
+
+🔹 🎯 Task 4: Static Imports and Constants
+You are creating a small math helper using constants and static imports.
+📥 Input:
+double radius;
+⚙️ Requirements:
+• Create a class MathConstants with a constant PI
+• Use public static final for the constant
+• In another class, use a static import to access PI without class name
+• Calculate the area of a circle: area = PI * radius * radius
+• Print: "Area: <value>"</value>
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Area: <value>
+📌 Test cases:
+Input: radius = 2
+Output:
+Area: 12.566370614359172
+Input: radius = 5
+Output:
+Area: 78.53981633974483</value>
+
+🔥 🎯 Bonus Task: Static Counter with Instances
+You are building a Player class to track how many players exist.
+📥 Input:
+Create multiple Player objects.
+⚙️ Requirements:
+• Add a static field playerCount
+• Increase it in the constructor
+• Add a static method getPlayerCount()
+• Print the count after creating players
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Players: <count>
+📌 Test cases:
+Input: create 5 players
+Output:
+Players: 5</count>
+
+🔹 🎯 Investigation Task: Static Access Rules (Instance vs Class)
+You are testing what happens when a static method tries to access instance data.
+📥 Input:
+No input required.
+⚙️ Requirements:
+• Create a class with:
+an instance field name
+a static method printName()
+• Inside printName(), try to access name directly
+• Observe the compilation error
+• Fix it by creating an object inside printName() or by passing an object as a parameter
+📌 Constraints:
+• Use only standard Java
+• Keep the output text exactly as specified
+📤 Output format:
+No runtime output — focus on the compile-time error and the corrected version
+📌 Test cases:
+Input: none
+Output:
+Compiler error: "non-static variable name cannot be referenced from a static context"

@@ -26,18 +26,18 @@ why min and max values are as they are, what happens when we extend max value by
 
 05-10
 
-1. Java memory (static vs heap). What is stored on the stack and what is stored on the heap?
-2. What is garbage collector, how it works? Additionally, must : https://mukhteshpendem31.medium.com/java-memory-management-made-simple-understanding-generations-garbage-collection-and-more-8157362de5a8
-3. StackOverflowError and OutOfMemoryError exceptions
-4. Pass-by-value vs pass-by-reference. Which of these used in java? Why?
-5. Java properties. What is it, how it's used? Why it's useful in plain java?
-6. Static keyword, variables, methods, blocks. What is special about static vs instance variables in objects?
-7. Final keyword. What means final? Variables (CONSTANTS, convention). Final Method Parameters. Final Methods. Final classes.
-8. Nested classes. Static Nested Class. Inner Class (Non-Static Nested Class). Local classes. Anonymous classes.
-9. Packages. Package Naming Convention. Explicit vs Wildcard import.
+1. Java memory (static vs heap). What is stored on the stack and what is stored on the heap? +
+2. What is garbage collector, how it works? Additionally, must :
+https://mukhteshpendem31.medium.com/java-memory-management-made-simple-understanding-generations-garbage-collection-and-more-8157362de5a8 +
+3. StackOverflowError and OutOfMemoryError exceptions +
+4. Pass-by-value vs pass-by-reference. Which of these used in java? Why? +
+5. Java properties. What is it, how it's used? Why it's useful in plain java? +
+6. Static keyword, variables, methods, blocks. What is special about static vs instance variables in objects? +
+7. Final keyword. What means final? Variables (CONSTANTS, convention). Final Method Parameters. Final Methods. Final classes. +
+8. Nested classes. Static Nested Class. Inner Class (Non-Static Nested Class). Local classes. Anonymous classes. +
+9. Packages. Package Naming Convention. Explicit vs Wildcard import. +
 
 ----
-
 
 / - partially checked
 + - fully checked

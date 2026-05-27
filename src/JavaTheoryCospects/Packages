@@ -1,0 +1,88 @@
+Packages in Java
+
+-------------------------------
+
+What is a package:
+- a way to group related classes and interfaces into a namespace
+- works like folders in a file system — organizes code and avoids naming conflicts
+- package statement must be the FIRST line in a source file (before imports and class)
+- controls access: package-private members are visible only within the same package
+
+  example:
+      package com.mycompany.utils;  // this file belongs to this package
+
+      public class StringHelper { ... }
+
+-------------------------------
+
+Package Naming Convention:
+- always lowercase — no exceptions
+- use reverse domain name to guarantee global uniqueness:
+      com.google.search
+      org.apache.commons
+      com.mycompany.projectname.module
+
+- structure mirrors the folder structure on disk:
+      com/mycompany/projectname/module/MyClass.java
+
+- if a name component is a reserved Java keyword, add an underscore:
+      com.mycompany.int_  // "int" is reserved, so use int_
+
+-------------------------------
+
+Using classes from other packages — 3 options:
+
+1. Fully Qualified Class Name (no import needed):
+      java.util.List<String> names = new java.util.ArrayList<>();
+   — verbose, used when two packages have a class with the same name
+
+2. Explicit Import (specific class):
+      import java.util.List;
+      import java.util.ArrayList;
+   — imports only what you name, exact and clear
+
+3. Wildcard Import (entire package):
+      import java.util.*;
+   — imports all classes from the package
+
+-------------------------------
+
+Explicit vs Wildcard Import:
+
+Explicit (import java.util.List):
+- makes it immediately clear which classes are used and where they come from
+- no risk of naming conflicts
+- preferred in most professional codebases and style guides
+
+Wildcard (import java.util.*):
+- shorter, less clutter at the top of the file
+- risk of naming conflicts if two packages have a class with the same name:
+      import java.util.*;
+      import java.sql.*;
+      // Date is in BOTH — compiler error, ambiguous
+- no runtime performance difference — compiler resolves wildcards to specific
+  classes before generating bytecode, so compiled output is identical
+
+  conflict fix — add one explicit import on top of wildcard:
+      import java.util.*;
+      import java.sql.*;
+      import java.util.Date; // resolves the ambiguity, util.Date wins
+
+-------------------------------
+
+Static Import:
+- imports static members (fields/methods) so you can use them without class name
+      import static java.lang.Math.PI;
+      import static java.lang.Math.*;  // wildcard version
+
+      double area = PI * r * r;  // instead of Math.PI * r * r
+
+- use sparingly — overusing makes it unclear where a name comes from
+
+-------------------------------
+
+Key rules to remember:
+- package statement — first line, one per file, applies to all types in the file
+- import statements — after package, before class definition
+- classes in the same package do NOT need to import each other
+- java.lang package (String, Math, System, etc.) is imported automatically

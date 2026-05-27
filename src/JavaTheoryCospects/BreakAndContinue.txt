@@ -42,8 +42,9 @@ for (int i = 0; i < 3; i++) {
 
 Usage flow for better understanding:
 
-	- Inside inner loop, want to break/continue inner loop -> unlabeled break / 	continue.
+	- Inside inner loop, want to break/continue inner loop -> unlabeled break / continue.
 
-	- Inside inner loop, want to break/continue outer loop -> labeled break / 	continue.
+	- Inside inner loop, want to break/continue outer loop -> labeled break / continue.
 
-	- Inside outer loop, want to break/continue outer loop -> unlabeled break / 	continue (inner loops affected automatically).
+	- Inside outer loop, want to break/continue outer loop -> unlabeled break / continue
+	(inner loops affected automatically).

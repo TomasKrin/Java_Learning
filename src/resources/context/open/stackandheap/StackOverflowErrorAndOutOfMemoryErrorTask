@@ -1,0 +1,37 @@
+🔹 🎯 Task 1: Triggering StackOverflowError (Infinite Recursion)
+You are testing what happens when a program keeps calling itself without a stopping condition.
+📥 Input:
+No input required.
+⚙️ Requirements:
+• Create a method that calls itself recursively without a base case
+• Call this method from main
+• Observe the error thrown by the JVM
+📌 Constraints:
+• Use only standard Java
+• Run this task in isolation
+• Output must match the required format exactly
+📤 Output format:
+A runtime error in the console (StackOverflowError)
+📌 Test cases:
+Input: none
+Output:
+StackOverflowError
+
+🔹 🎯 Task 2: Triggering OutOfMemoryError (Heap Exhaustion)
+You are testing what happens when a program keeps allocating memory without releasing it.
+📥 Input:
+No input required.
+⚙️ Requirements:
+• Create a structure (like a list) and keep adding objects in an infinite loop
+• Ensure objects are not eligible for garbage collection
+• Observe the error thrown by the JVM
+📌 Constraints:
+• Use only standard Java
+• Run this task in isolation
+• Output must match the required format exactly
+📤 Output format:
+A runtime error in the console (OutOfMemoryError)
+📌 Test cases:
+Input: none
+Output:
+OutOfMemoryError
