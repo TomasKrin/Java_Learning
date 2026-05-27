@@ -1,9 +1,9 @@
-package com.tomas.tasks.constructorsAndOOP;
+package com.tomas.tasks.constructorsAndOOP.constructorsAndOOPTask3;
 
 public class BankAccount {
-	String accountHolder;
+	private final String accountHolder;
+	private final String accountNumber;
 	double balance = 0.0;
-	String accountNumber;
 
 	BankAccount(String accountHolder , double initialBalance){
 		this.accountHolder = accountHolder;

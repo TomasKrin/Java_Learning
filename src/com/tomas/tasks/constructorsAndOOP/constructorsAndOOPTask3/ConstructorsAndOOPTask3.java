@@ -1,4 +1,4 @@
-package com.tomas.tasks.constructorsAndOOP;
+package com.tomas.tasks.constructorsAndOOP.constructorsAndOOPTask3;
 
 import com.tomas.tasks.TaskProcessor;
 
