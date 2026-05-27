@@ -1,4 +1,4 @@
-package com.tomas.tasks.inheritance;
+package com.tomas.tasks.inheritance.inheritanceTask1;
 
 public class Student {
 	static int totalStudents = 0;
