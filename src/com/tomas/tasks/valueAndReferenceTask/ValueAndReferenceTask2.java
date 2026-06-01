@@ -8,10 +8,10 @@ public class ValueAndReferenceTask2 implements TaskProcessor {
 		StringBuilder sb = new StringBuilder("Hi");
 
 		changeText(sb);
-		System.out.println(sb);
+		System.out.println("After changeText: " + sb);
 
 		reassign(sb);
-		System.out.println(sb);
+		System.out.println("After reassign: " + sb);
 
 	}
 
