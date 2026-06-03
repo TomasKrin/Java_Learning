@@ -1,0 +1,66 @@
+🔹 🎯 Task 1: Base Case vs Recursive Case
+You are practicing the structure of a basic recursive method.
+📥 Input:
+int n;
+⚙️ Requirements:
+• Create a method factorial(int n) using recursion
+• Base case: n == 0 returns 1
+• Recursive case: n * factorial(n - 1)
+• Print: "Factorial: <value>"
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Factorial: <value>
+📌 Test cases:
+Input: n=5
+Output:
+Factorial: 120
+Input: n=0
+Output:
+Factorial: 1</value></value>
+
+🔹 🎯 Task 2: Recursion on Arrays
+You are finding the maximum value using recursion.
+📥 Input:
+int[] arr;
+⚙️ Requirements:
+• Create a method max(int[] arr, int index)
+• Base case: index == arr.length - 1 returns arr[index]
+• Recursive case: return max of arr[index] and max(arr, index + 1)
+• Print: "Max: <value>"
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Max: <value>
+📌 Test cases:
+Input: arr = [3, 7, 2, 9, 5]
+Output:
+Max: 9
+Input: arr = [-4, -8, -1]
+Output:
+Max: -1</value></value>
+
+🔹 🎯 Task 3: String Recursion
+You are checking if a string is a palindrome recursively.
+📥 Input:
+String s;
+⚙️ Requirements:
+• Create a method isPalindrome(String s, int left, int right)
+• Base case: left >= right returns true
+• If s.charAt(left) != s.charAt(right) return false
+• Recursive case: call isPalindrome(s, left + 1, right - 1)
+• Print: "Palindrome: <value>"
+📌 Constraints:
+• Use only standard Java
+• Output must match the required format exactly
+📤 Output format:
+Palindrome: <value>
+📌 Test cases:
+Input: s="level"
+Output:
+Palindrome: true
+Input: s="hello"
+Output:
+Palindrome: false</value></value>

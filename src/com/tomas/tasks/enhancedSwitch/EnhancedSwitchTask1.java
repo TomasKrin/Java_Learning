@@ -1,4 +1,4 @@
-package com.tomas.tasks.enhanced_switch;
+package com.tomas.tasks.enhancedSwitch;
 
 import com.tomas.tasks.TaskProcessor;
 import java.util.Scanner;
